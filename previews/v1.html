@@ -458,13 +458,84 @@
   /* ─── footer ─── */
   footer {
     background: var(--ink);
-    color: rgba(251,250,247,0.55);
-    padding: 28px 0;
-    font-size: 13px;
+    color: rgba(251,250,247,0.7);
+    padding: 88px 0 28px;
+    font-size: 15px;
+    line-height: 1.55;
   }
-  footer .wrap {
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 12px;
+  footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+    padding-bottom: 64px;
+  }
+  footer .brand-col .wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    color: var(--bg);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 22px;
+  }
+  footer .brand-col .wordmark span { color: var(--accent); }
+  footer .brand-col p {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 380;
+    font-size: 17.5px;
+    line-height: 1.45;
+    color: rgba(251,250,247,0.82);
+    margin: 0;
+    max-width: 32ch;
+  }
+  footer .col h4 {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(251,250,247,0.48);
+    margin: 6px 0 24px;
+  }
+  footer .col ul {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex; flex-direction: column;
+    gap: 14px;
+  }
+  footer .col ul a {
+    color: var(--bg);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.15s, padding-left 0.15s;
+  }
+  footer .col ul a:hover {
+    color: var(--accent);
+  }
+  footer .legal {
+    padding-top: 24px;
+    border-top: 1px solid rgba(251,250,247,0.12);
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: rgba(251,250,247,0.42);
+    letter-spacing: 0.02em;
+  }
+  @media (max-width: 880px) {
+    footer { padding: 56px 0 24px; }
+    footer .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+    footer .legal {
+      flex-direction: column;
+      gap: 8px;
+      text-align: left;
+    }
   }
 
   /* ─── placeholder marker — disabled now that hero copy is final ─── */
@@ -712,8 +783,40 @@
 
 <footer>
   <div class="wrap">
-    <span>© Ian Kimbell &middot; Working worldwide</span>
-    <span>Set in Fraunces &amp; Inter Tight</span>
+    <div class="footer-grid">
+      <div class="brand-col">
+        <a href="#top" class="wordmark">Ian Kimbell<span>.</span></a>
+        <p>Helping technology leaders, sales teams, and experts turn complex ideas into stories that win attention, trust, and action.</p>
+      </div>
+      <div class="col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Story &amp; executive messaging</a></li>
+          <li><a href="#services">Presentation coaching</a></li>
+          <li><a href="#services">AI-augmented storytelling</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#about">Background</a></li>
+          <li><a href="#kind-words">Kind words</a></li>
+          <li><a href="#services">Why me</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:iankimbell@gmail.com">iankimbell@gmail.com</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#contact">Send a note</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Ian Kimbell &middot; All rights reserved.</span>
+      <span>Working worldwide</span>
+    </div>
   </div>
 </footer>
 
