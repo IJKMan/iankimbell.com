@@ -283,13 +283,11 @@ decide:
   (e-recht24.de for Impressum, datenschutz-generator.de for
   Datenschutz) to catch anything I missed. A real lawyer review is
   worth it if the consulting practice generates significant revenue.
-- **Google Fonts via CDN is a known German GDPR concern.** LG München
-  ruled in 2022 that loading Google Fonts from Google's CDN without
-  consent can violate GDPR (transmits IP to Google). Two fixes
-  worth considering: (a) self-host the Inter Tight font files
-  (download .woff2 from Google Fonts, serve from `assets/fonts/`),
-  or (b) add a cookie/consent banner. For now the Datenschutz
-  notes the issue.
+- **Fonts are self-hosted** (resolved). Inter Tight variable font
+  files live at `assets/fonts/inter-tight.woff2` (regular range)
+  and `assets/fonts/inter-tight-italic.woff2` (italic range). Two
+  files, ~470 KB total, cover weights 300-600 plus italics. No
+  CDN call, no IP transfer to Google. Datenschutz reflects this.
 - **More testimonials**: 4 currently. Ian's network has thousands of
   people; more named quotes would compound the trust.
 - **Cloudflare Pages setup**: not done yet. See "Hosting" above.
