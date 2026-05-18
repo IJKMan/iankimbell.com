@@ -539,40 +539,55 @@
     line-height: 1.55;
   }
 
-  /* ─── pull-quote section ─── */
-  .pullquote {
+  /* ─── press strip (featured in) ─── */
+  .press {
     background: var(--bg-soft);
-    padding: 96px 0;
+    padding: 56px 0;
     border-bottom: 1px solid var(--rule);
     text-align: center;
   }
-  .pullquote .quote-body {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-weight: 360;
-    font-size: clamp(30px, 4.6vw, 52px);
-    line-height: 1.18;
-    color: var(--ink);
-    max-width: 22ch;
-    margin: 0 auto;
-    letter-spacing: -0.01em;
-  }
-  .pullquote .quote-body::before { content: "\201C"; color: var(--accent); margin-right: 2px; }
-  .pullquote .quote-body::after  { content: "\201D"; color: var(--accent); margin-left: 2px; }
-  .pullquote cite {
-    display: block;
-    margin-top: 32px;
+  .press .press-head {
     font-family: 'Inter Tight', sans-serif;
-    font-size: 11.5px;
-    letter-spacing: 0.26em;
+    font-size: 11px;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--mute);
-    font-style: normal;
-    font-weight: 500;
+    margin-bottom: 28px;
   }
-  .pullquote cite span { color: var(--accent); }
-  @media (max-width: 880px) {
-    .pullquote { padding: 56px 0; }
+  .press .press-logos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .press .press-logos a {
+    text-decoration: none;
+    color: var(--ink);
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    opacity: 0.55;
+    transition: opacity 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .press .press-logos a em {
+    font-style: italic;
+    color: var(--mute);
+    font-weight: 380;
+  }
+  .press .press-logos a:hover {
+    opacity: 1;
+    color: var(--accent);
+  }
+  @media (max-width: 720px) {
+    .press { padding: 40px 0; }
+    .press .press-logos { gap: 28px; font-size: 18px; }
   }
   .why .body p {
     margin: 0 0 1em;
@@ -945,11 +960,15 @@
   </div>
 </section>
 
-<!-- ─────────────────────── PULL QUOTE (Ian, CIO 2009) ─────────────────────── -->
-<section class="pullquote">
+<!-- ─────────────────────── PRESS (featured in) ─────────────────────── -->
+<section class="press" aria-label="Featured in">
   <div class="wrap">
-    <p class="quote-body">I tell them I&rsquo;m the demo boy at SAP.</p>
-    <cite>Ian Kimbell, in <span>CIO Magazine</span>, 2009</cite>
+    <div class="press-head">Featured in</div>
+    <ul class="press-logos">
+      <li><a href="https://www.cio.com/article/278462/enterprise-software-one-on-one-with-sap-demo-boy-ian-kimbell.html" target="_blank" rel="noopener">CIO Magazine</a></li>
+      <li><a href="https://www.sap-press.com/discover-sap_2178/authors/" target="_blank" rel="noopener">SAP Press</a></li>
+      <li><a href="https://www.dummies.com/author/ian-kimbell-10151/" target="_blank" rel="noopener">Wiley <em>For Dummies</em></a></li>
+    </ul>
   </div>
 </section>
 
