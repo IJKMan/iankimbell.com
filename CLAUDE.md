@@ -274,8 +274,22 @@ decide:
   Melbourne), no Middle East (Dubai). If Ian's spoken there, add them.
 - **Real press logos**: SVGs of CIO Magazine, SAP Press, and Wiley
   go in `assets/press/`, then swap the text spans for `<img>`.
-- **LinkedIn URL**: currently `#` placeholder. Update to Ian's real
-  profile URL when ready.
+- **Legal pages (Impressum + Datenschutzerklärung)**: required for any
+  Germany-based commercial website. Draft templates exist at
+  `previews/impressum.html` and `previews/datenschutz.html`. Both
+  have `[FILL IN: ...]` placeholders for Ian's address, phone, VAT
+  ID, etc. **Before publishing:** fill in the placeholders, then
+  regenerate the final text via a German legal generator
+  (e-recht24.de for Impressum, datenschutz-generator.de for
+  Datenschutz) to catch anything I missed. A real lawyer review is
+  worth it if the consulting practice generates significant revenue.
+- **Google Fonts via CDN is a known German GDPR concern.** LG München
+  ruled in 2022 that loading Google Fonts from Google's CDN without
+  consent can violate GDPR (transmits IP to Google). Two fixes
+  worth considering: (a) self-host the Inter Tight font files
+  (download .woff2 from Google Fonts, serve from `assets/fonts/`),
+  or (b) add a cookie/consent banner. For now the Datenschutz
+  notes the issue.
 - **More testimonials**: 4 currently. Ian's network has thousands of
   people; more named quotes would compound the trust.
 - **Cloudflare Pages setup**: not done yet. See "Hosting" above.

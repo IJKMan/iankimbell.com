@@ -788,10 +788,19 @@
     border-top: 1px solid rgba(251,250,247,0.12);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 13px;
     color: rgba(251,250,247,0.42);
     letter-spacing: 0.02em;
+    gap: 24px;
   }
+  footer .legal .legal-links { display: flex; gap: 20px; }
+  footer .legal .legal-links a {
+    color: rgba(251,250,247,0.62);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  footer .legal .legal-links a:hover { color: var(--bg); }
   @media (max-width: 880px) {
     footer { padding: 56px 0 24px; }
     footer .footer-grid {
@@ -1054,7 +1063,7 @@
       </div>
       <div class="channels">
         <a href="mailto:iankimbell@gmail.com" class="placeholder">iankimbell@gmail.com <span>Email</span></a>
-        <a href="#" class="placeholder">LinkedIn <span>Professional</span></a>
+        <a href="https://www.linkedin.com/in/iankimbell/" target="_blank" rel="noopener" class="placeholder">LinkedIn <span>Professional</span></a>
         <a href="https://github.com/IJKMan" class="placeholder">github.com/IJKMan <span>Code</span></a>
       </div>
     </div>
@@ -1089,13 +1098,17 @@
         <h4>Get in touch</h4>
         <ul>
           <li><a href="mailto:iankimbell@gmail.com">iankimbell@gmail.com</a></li>
-          <li><a href="#">LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/in/iankimbell/" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="#contact">Send a note</a></li>
         </ul>
       </div>
     </div>
     <div class="legal">
       <span>© 2026 Ian Kimbell &middot; All rights reserved.</span>
+      <span class="legal-links">
+        <a href="./impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+      </span>
       <span>Working worldwide</span>
     </div>
   </div>
