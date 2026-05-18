@@ -1,0 +1,9 @@
+.DS_Store
+*.swp
+*.swo
+node_modules/
+.env
+.env.local
+
+# local exploration kept on disk for reference only
+/_archive-personal-site-previews/
