@@ -1,0 +1,1130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ian Kimbell · Complex ideas, told as stories that win attention, trust, and action.</title>
+<meta name="description" content="I help technology leaders, sales teams, and experts turn complex ideas into business stories that win attention, trust, and action. Storytelling, AI, presentation coaching, and executive-ready messaging, built on thirty-five years of creating stories for the world's technology companies. Working worldwide." />
+<style>
+  /* self-hosted Inter Tight (variable, covers weights 300-600 + italics) */
+  @font-face {
+    font-family: 'Inter Tight';
+    font-style: normal;
+    font-weight: 300 600;
+    font-display: swap;
+    src: url("assets/fonts/inter-tight.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: 'Inter Tight';
+    font-style: italic;
+    font-weight: 300 600;
+    font-display: swap;
+    src: url("assets/fonts/inter-tight-italic.woff2") format("woff2");
+  }
+  :root {
+    --bg: #fbfaf7;
+    --bg-soft: #f1ede4;
+    --ink: #18181b;
+    --ink-soft: #4a4a4f;
+    --mute: #8a8a90;
+    --rule: rgba(24,24,27,0.12);
+    --accent: #3f7975;       /* muted teal/sage, Orator-inspired */
+    --accent-deep: #2b5957;
+    --accent-soft: rgba(63,121,117,0.08);
+    --maxw: 1120px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', system-ui, sans-serif;
+    font-size: 17.5px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 40px; }
+  .display, h1, h2, h3 {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.015em;
+  }
+
+  /* ─── nav ─── */
+  nav.top {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg);
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: saturate(180%) blur(8px);
+  }
+  nav.top .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav.top .brand {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  nav.top .brand span { color: var(--accent); }
+  nav.top .links {
+    display: flex; gap: 28px; align-items: center;
+    font-size: 14.5px;
+  }
+  nav.top .links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  nav.top .links a:hover { color: var(--accent); }
+  .btn {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 11px 20px;
+    font-size: 14.5px;
+    font-weight: 500;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: all 0.18s ease;
+    border: 1px solid var(--ink);
+    cursor: pointer;
+  }
+  .btn:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+  .btn.ghost:hover { background: var(--ink); color: var(--bg); }
+
+  /* ─── hero ─── */
+  .hero {
+    display: grid;
+    grid-template-columns: 58fr 42fr;
+    align-items: stretch;
+    min-height: 78vh;
+    position: relative;
+  }
+  .hero .panel {
+    background: var(--accent);
+    color: var(--bg);
+    padding: 96px 64px 96px 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero .panel .inner {
+    max-width: 620px;
+    margin-left: auto;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  /* decorative outlined rectangle removed: read as visual noise, not design */
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(251,250,247,0.62);
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+  .hero h1 {
+    font-size: clamp(46px, 5.6vw, 76px);
+    line-height: 1.02;
+    margin: 0 0 32px;
+    font-weight: 400;
+    color: var(--bg);
+    letter-spacing: -0.02em;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: #7fdfd9;
+    font-weight: 400;
+  }
+  .hero .sub {
+    font-size: 18.5px;
+    line-height: 1.6;
+    color: rgba(251,250,247,0.82);
+    max-width: 48ch;
+    margin: 0 0 40px;
+  }
+  .hero .ctas {
+    display: flex; gap: 14px; flex-wrap: wrap;
+  }
+  .hero .ctas .btn {
+    background: var(--bg);
+    color: var(--accent);
+    border-color: var(--bg);
+  }
+  .hero .ctas .btn:hover {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+    transform: translateY(-1px);
+  }
+  .hero .ctas .btn.ghost {
+    background: transparent;
+    color: var(--bg);
+    border-color: rgba(251,250,247,0.4);
+  }
+  .hero .ctas .btn.ghost:hover {
+    background: var(--bg);
+    color: var(--accent);
+    border-color: var(--bg);
+  }
+  .hero .portrait {
+    background: #0a0a0c;
+    background-image: url("assets/ian.jpg");
+    background-size: cover;
+    background-position: 62% 35%;
+    min-height: 78vh;
+    position: relative;
+  }
+  .hero .portrait::after {
+    content: "Sapphire Keynote Presentation";
+    position: absolute;
+    bottom: 24px; left: 24px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(251,250,247,0.88);
+    padding: 8px 0 8px 14px;
+    border-left: 2px solid var(--accent);
+  }
+
+  /* ─── proof strip ─── */
+  .proof {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 36px 0;
+    background: var(--bg-soft);
+  }
+  .proof .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px;
+    text-align: left;
+  }
+  .proof .num {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--ink);
+  }
+  .proof .num em { font-style: italic; color: var(--accent); }
+  .proof .label {
+    margin-top: 6px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+
+  /* ─── section heads ─── */
+  .section { padding: 96px 0; border-bottom: 1px solid var(--rule); }
+  .section-head {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+    margin-bottom: 56px;
+    align-items: start;
+  }
+  .section-tag {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    padding-top: 12px;
+  }
+  .section-tag::before { content: "§ "; color: var(--mute); }
+  .section h2 {
+    font-size: clamp(34px, 4vw, 52px);
+    line-height: 1.05;
+    margin: 0;
+    font-weight: 400;
+  }
+  .section h2 em { font-style: italic; color: var(--accent); }
+
+  /* ─── services ─── */
+  .services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--ink);
+  }
+  .service {
+    padding: 36px 32px 40px;
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .service:last-child { border-right: none; }
+  .service .num {
+    font-family: 'Inter Tight', sans-serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--accent);
+    font-weight: 400;
+  }
+  .service h3 {
+    font-size: 26px;
+    line-height: 1.15;
+    margin: 0;
+    font-weight: 400;
+  }
+  .service p {
+    color: var(--ink-soft);
+    margin: 0;
+    font-size: 16.5px;
+    line-height: 1.55;
+  }
+  .service ul {
+    margin: 0; padding: 0; list-style: none;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    border-top: 1px dotted var(--rule);
+    padding-top: 14px;
+    margin-top: 4px;
+  }
+  .service ul li {
+    padding: 4px 0;
+    display: flex;
+    gap: 10px;
+  }
+  .service ul li::before {
+    content: "→";
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .service .for {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-top: auto;
+    padding-top: 16px;
+  }
+  .service .for strong { color: var(--ink); font-weight: 500; }
+
+  /* ─── why-me ─── */
+  .why .grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 64px;
+  }
+  .why .lede {
+    font-family: 'Inter Tight', sans-serif;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 1.25;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 0;
+    padding: 0 0 0 24px;
+    border-left: 2px solid var(--accent);
+  }
+  .why .lede p { margin: 0 0 18px; }
+  .why .lede cite {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-size: 11.5px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-weight: 500;
+  }
+  .why .lede cite span { color: var(--accent); }
+
+  /* ─── world map ─── */
+  .world {
+    background: var(--accent-deep);
+    color: var(--bg);
+    padding: 64px 0 56px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: none;
+  }
+  .world::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(251,250,247,0.05) 0.7px, transparent 1.4px);
+    background-size: 16px 16px;
+    pointer-events: none;
+  }
+  .world .wrap { position: relative; z-index: 1; }
+  .world .world-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 32px;
+  }
+  .world .world-head .section-tag {
+    color: rgba(251,250,247,0.58);
+    margin-bottom: 14px;
+  }
+  .world .world-head .section-tag::before { color: rgba(251,250,247,0.42); }
+  .world .world-head h2 {
+    color: var(--bg);
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.08;
+    margin: 0 0 14px;
+  }
+  .world .world-head h2 em {
+    font-style: italic;
+    color: var(--bg);
+    opacity: 0.7;
+  }
+  .world .world-intro {
+    color: rgba(251,250,247,0.72);
+    font-size: 15.5px;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 52ch;
+  }
+  .world .map-wrap {
+    margin: 0 auto;
+    max-width: 920px;
+    aspect-ratio: 360 / 130;
+    position: relative;
+  }
+  .world svg.map {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  /* dotted land mass */
+  .world svg.map .land circle {
+    fill: rgba(127,223,217,0.32);
+  }
+  /* city dot: bright accent, pulsing */
+  .world svg.map .city .dot {
+    fill: #f4ede0;
+    filter: drop-shadow(0 0 1.8px rgba(244,237,224,0.95));
+    animation: city-pulse 2.6s ease-in-out infinite;
+    transition: r 0.15s;
+  }
+  @keyframes city-pulse {
+    0%, 100% { opacity: 0.7; }
+    50%      { opacity: 1; }
+  }
+  .world svg.map .city:nth-of-type(1)  .dot { animation-delay: 0.00s; }
+  .world svg.map .city:nth-of-type(2)  .dot { animation-delay: 0.10s; }
+  .world svg.map .city:nth-of-type(3)  .dot { animation-delay: 0.20s; }
+  .world svg.map .city:nth-of-type(4)  .dot { animation-delay: 0.30s; }
+  .world svg.map .city:nth-of-type(5)  .dot { animation-delay: 0.40s; }
+  .world svg.map .city:nth-of-type(6)  .dot { animation-delay: 0.50s; }
+  .world svg.map .city:nth-of-type(7)  .dot { animation-delay: 0.60s; }
+  .world svg.map .city:nth-of-type(8)  .dot { animation-delay: 0.70s; }
+  .world svg.map .city:nth-of-type(9)  .dot { animation-delay: 0.80s; }
+  .world svg.map .city:nth-of-type(10) .dot { animation-delay: 0.90s; }
+  .world svg.map .city:nth-of-type(11) .dot { animation-delay: 1.00s; }
+  .world svg.map .city:nth-of-type(12) .dot { animation-delay: 1.10s; }
+  .world svg.map .city:nth-of-type(13) .dot { animation-delay: 1.20s; }
+  .world svg.map .city:nth-of-type(14) .dot { animation-delay: 1.30s; }
+  .world svg.map .city:nth-of-type(15) .dot { animation-delay: 1.40s; }
+  .world svg.map .city:nth-of-type(16) .dot { animation-delay: 1.50s; }
+  .world svg.map .city:nth-of-type(17) .dot { animation-delay: 1.60s; }
+  .world svg.map .city:nth-of-type(18) .dot { animation-delay: 1.70s; }
+  .world svg.map .city:nth-of-type(19) .dot { animation-delay: 1.80s; }
+  .world svg.map .city:nth-of-type(20) .dot { animation-delay: 1.90s; }
+  .world svg.map .city:nth-of-type(21) .dot { animation-delay: 2.00s; }
+  .world svg.map .city:nth-of-type(22) .dot { animation-delay: 2.10s; }
+  .world svg.map .city:nth-of-type(23) .dot { animation-delay: 2.20s; }
+  .world svg.map .city:nth-of-type(24) .dot { animation-delay: 2.30s; }
+  /* hover label */
+  .world svg.map .city .label {
+    fill: #f4ede0;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 5px;
+    font-weight: 500;
+    text-anchor: middle;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    paint-order: stroke;
+    stroke: var(--accent-deep);
+    stroke-width: 1.4;
+    letter-spacing: 0.04em;
+  }
+  .world svg.map .city:hover .label { opacity: 1; }
+  .world svg.map .city:hover .dot {
+    r: 2.4;
+    animation: none;
+    opacity: 1;
+  }
+  /* hint micro-text under the intro */
+  .world .world-intro .hint {
+    display: inline-block;
+    margin-left: 6px;
+    color: rgba(251,250,247,0.5);
+    font-size: 13.5px;
+    font-style: italic;
+  }
+  @media (max-width: 880px) {
+    .world { padding: 48px 0; }
+    .world .world-intro .hint { display: block; margin-left: 0; margin-top: 4px; }
+  }
+
+  /* ─── practice (single-block services) ─── */
+  .practice .practice-body {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .practice .section-head { margin-bottom: 48px; }
+  .practice .lede {
+    font-family: 'Inter Tight', sans-serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+    font-weight: 400;
+  }
+  .practice .activities {
+    list-style: none;
+    margin: 0 0 48px;
+    padding: 0;
+    counter-reset: act;
+    border-top: 1px solid var(--ink);
+  }
+  .practice .activities li {
+    counter-increment: act;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: clamp(22px, 2.6vw, 30px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--ink);
+    display: flex;
+    align-items: baseline;
+    gap: 22px;
+    letter-spacing: -0.005em;
+  }
+  .practice .activities li::before {
+    content: "0" counter(act);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    flex-shrink: 0;
+    width: 26px;
+  }
+  .practice .closing {
+    padding: 28px 32px;
+    background: var(--bg-soft);
+    border-left: 3px solid var(--accent);
+    font-family: 'Inter Tight', sans-serif;
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .practice .closing strong {
+    font-style: normal;
+    display: block;
+    margin-top: 10px;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-family: 'Inter Tight', sans-serif;
+  }
+
+  /* two-part testimonial body */
+  .quote .q-body {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin: 14px 0 0;
+    line-height: 1.55;
+  }
+
+  /* ─── press strip (featured in) ─── */
+  .press {
+    background: var(--bg-soft);
+    padding: 56px 0;
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+  }
+  .press .press-head {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 28px;
+  }
+  .press .press-logos {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .press .press-logos a {
+    text-decoration: none;
+    color: var(--ink);
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.005em;
+    opacity: 0.55;
+    transition: opacity 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .press .press-logos a em {
+    font-style: italic;
+    color: var(--mute);
+    font-weight: 400;
+  }
+  .press .press-logos a:hover {
+    opacity: 1;
+    color: var(--accent);
+  }
+  @media (max-width: 720px) {
+    .press { padding: 40px 0; }
+    .press .press-logos { gap: 28px; font-size: 18px; }
+  }
+  .why .body p {
+    margin: 0 0 1em;
+    color: var(--ink-soft);
+    font-size: 17.5px;
+  }
+  .why .body p:last-child { margin-bottom: 0; }
+  .why .body strong { color: var(--ink); font-weight: 500; }
+
+  /* ─── testimonials ─── */
+  .quotes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .quote {
+    padding: 32px;
+    background: var(--bg-soft);
+    border-left: 3px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .quote .q {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: 400;
+    margin: 0;
+    color: var(--ink);
+  }
+  .quote .q::before { content: "“"; color: var(--accent); margin-right: 2px; }
+  .quote .q::after { content: "”"; color: var(--accent); margin-left: 2px; }
+  .quote .by {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    margin-top: auto;
+  }
+  .quote .by strong { color: var(--ink); font-weight: 500; display: block; }
+
+  /* ─── about ─── */
+  .about .grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .about .stack {
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .about .stack .item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 16px;
+    align-items: baseline;
+  }
+  .about .stack .item .yr {
+    font-family: 'Inter Tight', sans-serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 17px;
+  }
+  .about .stack .item .what {
+    color: var(--ink);
+    font-size: 16px;
+  }
+  .about .stack .item .what span {
+    display: block;
+    color: var(--mute);
+    font-size: 13.5px;
+    margin-top: 2px;
+  }
+  .about .body p {
+    margin: 0 0 1em;
+    color: var(--ink-soft);
+    font-size: 17.5px;
+    line-height: 1.6;
+  }
+  .about .body p:last-child { margin-bottom: 0; }
+
+  /* ─── contact ─── */
+  .contact {
+    background: var(--accent-deep);
+    color: var(--bg);
+    border-bottom: none;
+  }
+  .contact .section-tag { color: rgba(251,250,247,0.62); }
+  .contact .section-tag::before { color: rgba(251,250,247,0.45); }
+  .contact h2 { color: var(--bg); }
+  .contact h2 em { color: var(--bg); font-style: italic; opacity: 0.78; }
+  .contact .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .contact .body p {
+    color: rgba(251,250,247,0.82);
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 0 28px;
+  }
+  .contact .channels {
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .contact .channels a {
+    color: var(--bg);
+    text-decoration: none;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(251,250,247,0.22);
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 24px;
+    transition: padding 0.2s ease, color 0.2s ease;
+  }
+  .contact .channels a span {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(251,250,247,0.55);
+  }
+  .contact .channels a:hover {
+    color: var(--bg);
+    padding-left: 8px;
+    opacity: 0.78;
+  }
+  .contact .btn {
+    background: var(--bg); border-color: var(--bg); color: var(--accent-deep);
+  }
+  .contact .btn:hover { background: transparent; color: var(--bg); border-color: var(--bg); }
+
+  /* ─── footer ─── */
+  footer {
+    background: var(--ink);
+    color: rgba(251,250,247,0.7);
+    padding: 88px 0 28px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  footer .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+    padding-bottom: 64px;
+  }
+  footer .brand-col .wordmark {
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    color: var(--bg);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 22px;
+  }
+  footer .brand-col .wordmark span { color: var(--accent); }
+  footer .brand-col p {
+    font-family: 'Inter Tight', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 17.5px;
+    line-height: 1.45;
+    color: rgba(251,250,247,0.82);
+    margin: 0;
+    max-width: 32ch;
+  }
+  footer .col h4 {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgba(251,250,247,0.48);
+    margin: 6px 0 24px;
+  }
+  footer .col ul {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex; flex-direction: column;
+    gap: 14px;
+  }
+  footer .col ul a {
+    color: var(--bg);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.15s, padding-left 0.15s;
+  }
+  footer .col ul a:hover {
+    color: var(--accent);
+  }
+  footer .legal {
+    padding-top: 24px;
+    border-top: 1px solid rgba(251,250,247,0.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: rgba(251,250,247,0.42);
+    letter-spacing: 0.02em;
+    gap: 24px;
+  }
+  footer .legal .legal-links { display: flex; gap: 20px; }
+  footer .legal .legal-links a {
+    color: rgba(251,250,247,0.62);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  footer .legal .legal-links a:hover { color: var(--bg); }
+  @media (max-width: 880px) {
+    footer { padding: 56px 0 24px; }
+    footer .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+    footer .legal {
+      flex-direction: column;
+      gap: 8px;
+      text-align: left;
+    }
+  }
+
+  /* ─── placeholder marker: disabled now that hero copy is final ─── */
+  /* the .placeholder class stays in the markup as a future on/off toggle;
+     re-enable by uncommenting if scaffolding mode is ever needed again */
+  .placeholder { }
+
+  /* ─── motion ─── */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero, .proof, .section { animation: rise 0.7s ease both; }
+  .proof { animation-delay: 0.12s; }
+  .section:nth-of-type(2) { animation-delay: 0.18s; }
+
+  /* ─── responsive ─── */
+  @media (max-width: 880px) {
+    .wrap { padding: 0 22px; }
+    nav.top .links a:not(.btn) { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: 0; }
+    .hero .panel { padding: 48px 22px 56px; }
+    .hero .panel .inner { max-width: none; margin-left: 0; }
+    .hero .panel::before, .hero .panel::after { display: none; }
+    .hero .portrait { min-height: 0; aspect-ratio: 4/3.5; }
+    .proof .grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .section { padding: 56px 0; }
+    .section-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 36px; }
+    .services { grid-template-columns: 1fr; border-top: 1px solid var(--ink); }
+    .service { border-right: none; border-bottom: 1px solid var(--rule); }
+    .service:last-child { border-bottom: none; }
+    .why .grid, .about .grid, .contact .grid { grid-template-columns: 1fr; gap: 32px; }
+    .quotes { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a href="#top" class="brand">Ian Kimbell<span>.</span></a>
+    <div class="links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="btn ghost">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ───────────────────────── HERO ───────────────────────── -->
+<section class="hero" id="top">
+  <div class="panel">
+    <div class="inner">
+      <div class="eyebrow">Strategic communication coaching</div>
+      <h1 class="placeholder">Complex ideas, told as stories that win <em>attention, trust, and action</em>.</h1>
+      <p class="sub placeholder">
+        I help leaders, technical professionals, and teams communicate complex ideas
+        with clarity, confidence, and influence, especially when the stakes are high.
+      </p>
+      <div class="ctas">
+        <a href="#contact" class="btn">Contact Me</a>
+        <a href="#services" class="btn ghost">How I work →</a>
+      </div>
+    </div>
+  </div>
+  <div class="portrait" aria-label="Portrait of Ian Kimbell"></div>
+</section>
+
+<!-- ─────────────────────── PROOF STRIP ─────────────────────── -->
+<section class="proof">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="num placeholder"><em>35+</em></div>
+        <div class="label placeholder">years creating stories for the world's technology companies</div>
+      </div>
+      <div>
+        <div class="num placeholder"><em>1 to 20k</em></div>
+        <div class="label placeholder">support messaging from individuals to stadiums</div>
+      </div>
+      <div>
+        <div class="num placeholder"><em>Global</em></div>
+        <div class="label placeholder">working with clients from over 46 countries</div>
+      </div>
+      <div>
+        <div class="num placeholder"><em>Now</em></div>
+        <div class="label placeholder">selective independent practice, working worldwide</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── WORLD MAP ─────────────────────── -->
+<section class="section world" id="stages">
+  <div class="wrap">
+    <div class="world-head">
+      <div class="section-tag">Stages</div>
+      <h2>From the stage, <em>worldwide</em>.</h2>
+      <p class="world-intro">Sapphire, TechEd, and customer keynotes. A partial map of the cities where the work has happened. <span class="hint">Hover any dot for the city name.</span></p>
+    </div>
+    <div class="map-wrap">
+      <svg class="map" viewBox="0 25 360 130" preserveAspectRatio="xMidYMid meet" aria-label="World map showing speaking engagement cities">
+        <g class="land"><circle cx="3" cy="25" r=".55"/><circle cx="7" cy="25" r=".55"/><circle cx="9" cy="25" r=".55"/><circle cx="11" cy="25" r=".55"/><circle cx="13" cy="25" r=".55"/><circle cx="15" cy="25" r=".55"/><circle cx="17" cy="25" r=".55"/><circle cx="19" cy="25" r=".55"/><circle cx="21" cy="25" r=".55"/><circle cx="23" cy="25" r=".55"/><circle cx="25" cy="25" r=".55"/><circle cx="27" cy="25" r=".55"/><circle cx="29" cy="25" r=".55"/><circle cx="31" cy="25" r=".55"/><circle cx="33" cy="25" r=".55"/><circle cx="35" cy="25" r=".55"/><circle cx="37" cy="25" r=".55"/><circle cx="39" cy="25" r=".55"/><circle cx="41" cy="25" r=".55"/><circle cx="43" cy="25" r=".55"/><circle cx="45" cy="25" r=".55"/><circle cx="47" cy="25" r=".55"/><circle cx="49" cy="25" r=".55"/><circle cx="51" cy="25" r=".55"/><circle cx="53" cy="25" r=".55"/><circle cx="55" cy="25" r=".55"/><circle cx="57" cy="25" r=".55"/><circle cx="59" cy="25" r=".55"/><circle cx="61" cy="25" r=".55"/><circle cx="63" cy="25" r=".55"/><circle cx="65" cy="25" r=".55"/><circle cx="67" cy="25" r=".55"/><circle cx="69" cy="25" r=".55"/><circle cx="73" cy="25" r=".55"/><circle cx="93" cy="25" r=".55"/><circle cx="111" cy="25" r=".55"/><circle cx="113" cy="25" r=".55"/><circle cx="125" cy="25" r=".55"/><circle cx="157" cy="25" r=".55"/><circle cx="159" cy="25" r=".55"/><circle cx="161" cy="25" r=".55"/><circle cx="191" cy="25" r=".55"/><circle cx="193" cy="25" r=".55"/><circle cx="195" cy="25" r=".55"/><circle cx="197" cy="25" r=".55"/><circle cx="199" cy="25" r=".55"/><circle cx="201" cy="25" r=".55"/><circle cx="203" cy="25" r=".55"/><circle cx="205" cy="25" r=".55"/><circle cx="207" cy="25" r=".55"/><circle cx="209" cy="25" r=".55"/><circle cx="211" cy="25" r=".55"/><circle cx="213" cy="25" r=".55"/><circle cx="215" cy="25" r=".55"/><circle cx="217" cy="25" r=".55"/><circle cx="219" cy="25" r=".55"/><circle cx="221" cy="25" r=".55"/><circle cx="223" cy="25" r=".55"/><circle cx="225" cy="25" r=".55"/><circle cx="227" cy="25" r=".55"/><circle cx="229" cy="25" r=".55"/><circle cx="231" cy="25" r=".55"/><circle cx="233" cy="25" r=".55"/><circle cx="235" cy="25" r=".55"/><circle cx="237" cy="25" r=".55"/><circle cx="239" cy="25" r=".55"/><circle cx="241" cy="25" r=".55"/><circle cx="243" cy="25" r=".55"/><circle cx="245" cy="25" r=".55"/><circle cx="247" cy="25" r=".55"/><circle cx="249" cy="25" r=".55"/><circle cx="251" cy="25" r=".55"/><circle cx="253" cy="25" r=".55"/><circle cx="255" cy="25" r=".55"/><circle cx="257" cy="25" r=".55"/><circle cx="259" cy="25" r=".55"/><circle cx="261" cy="25" r=".55"/><circle cx="263" cy="25" r=".55"/><circle cx="265" cy="25" r=".55"/><circle cx="267" cy="25" r=".55"/><circle cx="269" cy="25" r=".55"/><circle cx="271" cy="25" r=".55"/><circle cx="273" cy="25" r=".55"/><circle cx="279" cy="25" r=".55"/><circle cx="281" cy="25" r=".55"/><circle cx="283" cy="25" r=".55"/><circle cx="285" cy="25" r=".55"/><circle cx="287" cy="25" r=".55"/><circle cx="289" cy="25" r=".55"/><circle cx="291" cy="25" r=".55"/><circle cx="293" cy="25" r=".55"/><circle cx="295" cy="25" r=".55"/><circle cx="297" cy="25" r=".55"/><circle cx="299" cy="25" r=".55"/><circle cx="301" cy="25" r=".55"/><circle cx="303" cy="25" r=".55"/><circle cx="305" cy="25" r=".55"/><circle cx="307" cy="25" r=".55"/><circle cx="309" cy="25" r=".55"/><circle cx="311" cy="25" r=".55"/><circle cx="313" cy="25" r=".55"/><circle cx="315" cy="25" r=".55"/><circle cx="317" cy="25" r=".55"/><circle cx="321" cy="25" r=".55"/><circle cx="323" cy="25" r=".55"/><circle cx="327" cy="25" r=".55"/><circle cx="329" cy="25" r=".55"/><circle cx="331" cy="25" r=".55"/><circle cx="333" cy="25" r=".55"/><circle cx="335" cy="25" r=".55"/><circle cx="337" cy="25" r=".55"/><circle cx="339" cy="25" r=".55"/><circle cx="345" cy="25" r=".55"/><circle cx="347" cy="25" r=".55"/><circle cx="349" cy="25" r=".55"/><circle cx="351" cy="25" r=".55"/><circle cx="353" cy="25" r=".55"/><circle cx="355" cy="25" r=".55"/><circle cx="357" cy="25" r=".55"/><circle cx="3" cy="27" r=".55"/><circle cx="11" cy="27" r=".55"/><circle cx="15" cy="27" r=".55"/><circle cx="17" cy="27" r=".55"/><circle cx="19" cy="27" r=".55"/><circle cx="21" cy="27" r=".55"/><circle cx="23" cy="27" r=".55"/><circle cx="25" cy="27" r=".55"/><circle cx="27" cy="27" r=".55"/><circle cx="29" cy="27" r=".55"/><circle cx="31" cy="27" r=".55"/><circle cx="33" cy="27" r=".55"/><circle cx="35" cy="27" r=".55"/><circle cx="37" cy="27" r=".55"/><circle cx="39" cy="27" r=".55"/><circle cx="41" cy="27" r=".55"/><circle cx="43" cy="27" r=".55"/><circle cx="45" cy="27" r=".55"/><circle cx="47" cy="27" r=".55"/><circle cx="49" cy="27" r=".55"/><circle cx="55" cy="27" r=".55"/><circle cx="57" cy="27" r=".55"/><circle cx="59" cy="27" r=".55"/><circle cx="61" cy="27" r=".55"/><circle cx="63" cy="27" r=".55"/><circle cx="65" cy="27" r=".55"/><circle cx="67" cy="27" r=".55"/><circle cx="69" cy="27" r=".55"/><circle cx="71" cy="27" r=".55"/><circle cx="73" cy="27" r=".55"/><circle cx="75" cy="27" r=".55"/><circle cx="77" cy="27" r=".55"/><circle cx="79" cy="27" r=".55"/><circle cx="81" cy="27" r=".55"/><circle cx="87" cy="27" r=".55"/><circle cx="89" cy="27" r=".55"/><circle cx="103" cy="27" r=".55"/><circle cx="107" cy="27" r=".55"/><circle cx="143" cy="27" r=".55"/><circle cx="159" cy="27" r=".55"/><circle cx="187" cy="27" r=".55"/><circle cx="189" cy="27" r=".55"/><circle cx="191" cy="27" r=".55"/><circle cx="193" cy="27" r=".55"/><circle cx="195" cy="27" r=".55"/><circle cx="197" cy="27" r=".55"/><circle cx="199" cy="27" r=".55"/><circle cx="201" cy="27" r=".55"/><circle cx="203" cy="27" r=".55"/><circle cx="205" cy="27" r=".55"/><circle cx="207" cy="27" r=".55"/><circle cx="209" cy="27" r=".55"/><circle cx="211" cy="27" r=".55"/><circle cx="213" cy="27" r=".55"/><circle cx="215" cy="27" r=".55"/><circle cx="217" cy="27" r=".55"/><circle cx="219" cy="27" r=".55"/><circle cx="221" cy="27" r=".55"/><circle cx="223" cy="27" r=".55"/><circle cx="225" cy="27" r=".55"/><circle cx="227" cy="27" r=".55"/><circle cx="229" cy="27" r=".55"/><circle cx="231" cy="27" r=".55"/><circle cx="233" cy="27" r=".55"/><circle cx="235" cy="27" r=".55"/><circle cx="237" cy="27" r=".55"/><circle cx="239" cy="27" r=".55"/><circle cx="241" cy="27" r=".55"/><circle cx="243" cy="27" r=".55"/><circle cx="245" cy="27" r=".55"/><circle cx="247" cy="27" r=".55"/><circle cx="249" cy="27" r=".55"/><circle cx="251" cy="27" r=".55"/><circle cx="253" cy="27" r=".55"/><circle cx="255" cy="27" r=".55"/><circle cx="257" cy="27" r=".55"/><circle cx="259" cy="27" r=".55"/><circle cx="261" cy="27" r=".55"/><circle cx="263" cy="27" r=".55"/><circle cx="265" cy="27" r=".55"/><circle cx="267" cy="27" r=".55"/><circle cx="269" cy="27" r=".55"/><circle cx="271" cy="27" r=".55"/><circle cx="273" cy="27" r=".55"/><circle cx="275" cy="27" r=".55"/><circle cx="277" cy="27" r=".55"/><circle cx="279" cy="27" r=".55"/><circle cx="281" cy="27" r=".55"/><circle cx="283" cy="27" r=".55"/><circle cx="285" cy="27" r=".55"/><circle cx="287" cy="27" r=".55"/><circle cx="289" cy="27" r=".55"/><circle cx="291" cy="27" r=".55"/><circle cx="293" cy="27" r=".55"/><circle cx="295" cy="27" r=".55"/><circle cx="297" cy="27" r=".55"/><circle cx="299" cy="27" r=".55"/><circle cx="301" cy="27" r=".55"/><circle cx="303" cy="27" r=".55"/><circle cx="305" cy="27" r=".55"/><circle cx="307" cy="27" r=".55"/><circle cx="309" cy="27" r=".55"/><circle cx="311" cy="27" r=".55"/><circle cx="313" cy="27" r=".55"/><circle cx="315" cy="27" r=".55"/><circle cx="317" cy="27" r=".55"/><circle cx="321" cy="27" r=".55"/><circle cx="329" cy="27" r=".55"/><circle cx="331" cy="27" r=".55"/><circle cx="333" cy="27" r=".55"/><circle cx="335" cy="27" r=".55"/><circle cx="337" cy="27" r=".55"/><circle cx="339" cy="27" r=".55"/><circle cx="341" cy="27" r=".55"/><circle cx="345" cy="27" r=".55"/><circle cx="347" cy="27" r=".55"/><circle cx="349" cy="27" r=".55"/><circle cx="351" cy="27" r=".55"/><circle cx="353" cy="27" r=".55"/><circle cx="355" cy="27" r=".55"/><circle cx="357" cy="27" r=".55"/><circle cx="3" cy="29" r=".55"/><circle cx="11" cy="29" r=".55"/><circle cx="13" cy="29" r=".55"/><circle cx="15" cy="29" r=".55"/><circle cx="17" cy="29" r=".55"/><circle cx="19" cy="29" r=".55"/><circle cx="21" cy="29" r=".55"/><circle cx="23" cy="29" r=".55"/><circle cx="25" cy="29" r=".55"/><circle cx="27" cy="29" r=".55"/><circle cx="31" cy="29" r=".55"/><circle cx="35" cy="29" r=".55"/><circle cx="43" cy="29" r=".55"/><circle cx="45" cy="29" r=".55"/><circle cx="47" cy="29" r=".55"/><circle cx="49" cy="29" r=".55"/><circle cx="51" cy="29" r=".55"/><circle cx="57" cy="29" r=".55"/><circle cx="59" cy="29" r=".55"/><circle cx="61" cy="29" r=".55"/><circle cx="63" cy="29" r=".55"/><circle cx="65" cy="29" r=".55"/><circle cx="67" cy="29" r=".55"/><circle cx="69" cy="29" r=".55"/><circle cx="71" cy="29" r=".55"/><circle cx="73" cy="29" r=".55"/><circle cx="75" cy="29" r=".55"/><circle cx="77" cy="29" r=".55"/><circle cx="79" cy="29" r=".55"/><circle cx="81" cy="29" r=".55"/><circle cx="83" cy="29" r=".55"/><circle cx="85" cy="29" r=".55"/><circle cx="87" cy="29" r=".55"/><circle cx="185" cy="29" r=".55"/><circle cx="191" cy="29" r=".55"/><circle cx="193" cy="29" r=".55"/><circle cx="195" cy="29" r=".55"/><circle cx="197" cy="29" r=".55"/><circle cx="199" cy="29" r=".55"/><circle cx="201" cy="29" r=".55"/><circle cx="203" cy="29" r=".55"/><circle cx="205" cy="29" r=".55"/><circle cx="207" cy="29" r=".55"/><circle cx="209" cy="29" r=".55"/><circle cx="211" cy="29" r=".55"/><circle cx="213" cy="29" r=".55"/><circle cx="215" cy="29" r=".55"/><circle cx="217" cy="29" r=".55"/><circle cx="219" cy="29" r=".55"/><circle cx="221" cy="29" r=".55"/><circle cx="223" cy="29" r=".55"/><circle cx="225" cy="29" r=".55"/><circle cx="227" cy="29" r=".55"/><circle cx="229" cy="29" r=".55"/><circle cx="231" cy="29" r=".55"/><circle cx="233" cy="29" r=".55"/><circle cx="235" cy="29" r=".55"/><circle cx="237" cy="29" r=".55"/><circle cx="239" cy="29" r=".55"/><circle cx="241" cy="29" r=".55"/><circle cx="243" cy="29" r=".55"/><circle cx="245" cy="29" r=".55"/><circle cx="247" cy="29" r=".55"/><circle cx="249" cy="29" r=".55"/><circle cx="251" cy="29" r=".55"/><circle cx="253" cy="29" r=".55"/><circle cx="255" cy="29" r=".55"/><circle cx="257" cy="29" r=".55"/><circle cx="259" cy="29" r=".55"/><circle cx="261" cy="29" r=".55"/><circle cx="263" cy="29" r=".55"/><circle cx="265" cy="29" r=".55"/><circle cx="267" cy="29" r=".55"/><circle cx="269" cy="29" r=".55"/><circle cx="271" cy="29" r=".55"/><circle cx="273" cy="29" r=".55"/><circle cx="275" cy="29" r=".55"/><circle cx="277" cy="29" r=".55"/><circle cx="279" cy="29" r=".55"/><circle cx="281" cy="29" r=".55"/><circle cx="283" cy="29" r=".55"/><circle cx="285" cy="29" r=".55"/><circle cx="287" cy="29" r=".55"/><circle cx="289" cy="29" r=".55"/><circle cx="291" cy="29" r=".55"/><circle cx="293" cy="29" r=".55"/><circle cx="295" cy="29" r=".55"/><circle cx="297" cy="29" r=".55"/><circle cx="299" cy="29" r=".55"/><circle cx="301" cy="29" r=".55"/><circle cx="303" cy="29" r=".55"/><circle cx="305" cy="29" r=".55"/><circle cx="307" cy="29" r=".55"/><circle cx="309" cy="29" r=".55"/><circle cx="311" cy="29" r=".55"/><circle cx="313" cy="29" r=".55"/><circle cx="315" cy="29" r=".55"/><circle cx="317" cy="29" r=".55"/><circle cx="327" cy="29" r=".55"/><circle cx="331" cy="29" r=".55"/><circle cx="333" cy="29" r=".55"/><circle cx="335" cy="29" r=".55"/><circle cx="339" cy="29" r=".55"/><circle cx="341" cy="29" r=".55"/><circle cx="343" cy="29" r=".55"/><circle cx="345" cy="29" r=".55"/><circle cx="347" cy="29" r=".55"/><circle cx="349" cy="29" r=".55"/><circle cx="353" cy="29" r=".55"/><circle cx="357" cy="29" r=".55"/><circle cx="13" cy="31" r=".55"/><circle cx="15" cy="31" r=".55"/><circle cx="17" cy="31" r=".55"/><circle cx="19" cy="31" r=".55"/><circle cx="21" cy="31" r=".55"/><circle cx="23" cy="31" r=".55"/><circle cx="25" cy="31" r=".55"/><circle cx="49" cy="31" r=".55"/><circle cx="51" cy="31" r=".55"/><circle cx="53" cy="31" r=".55"/><circle cx="55" cy="31" r=".55"/><circle cx="57" cy="31" r=".55"/><circle cx="59" cy="31" r=".55"/><circle cx="61" cy="31" r=".55"/><circle cx="63" cy="31" r=".55"/><circle cx="65" cy="31" r=".55"/><circle cx="67" cy="31" r=".55"/><circle cx="69" cy="31" r=".55"/><circle cx="71" cy="31" r=".55"/><circle cx="73" cy="31" r=".55"/><circle cx="75" cy="31" r=".55"/><circle cx="77" cy="31" r=".55"/><circle cx="79" cy="31" r=".55"/><circle cx="81" cy="31" r=".55"/><circle cx="83" cy="31" r=".55"/><circle cx="85" cy="31" r=".55"/><circle cx="103" cy="31" r=".55"/><circle cx="185" cy="31" r=".55"/><circle cx="187" cy="31" r=".55"/><circle cx="189" cy="31" r=".55"/><circle cx="191" cy="31" r=".55"/><circle cx="193" cy="31" r=".55"/><circle cx="195" cy="31" r=".55"/><circle cx="197" cy="31" r=".55"/><circle cx="199" cy="31" r=".55"/><circle cx="201" cy="31" r=".55"/><circle cx="203" cy="31" r=".55"/><circle cx="205" cy="31" r=".55"/><circle cx="207" cy="31" r=".55"/><circle cx="209" cy="31" r=".55"/><circle cx="211" cy="31" r=".55"/><circle cx="213" cy="31" r=".55"/><circle cx="215" cy="31" r=".55"/><circle cx="217" cy="31" r=".55"/><circle cx="219" cy="31" r=".55"/><circle cx="221" cy="31" r=".55"/><circle cx="223" cy="31" r=".55"/><circle cx="225" cy="31" r=".55"/><circle cx="227" cy="31" r=".55"/><circle cx="229" cy="31" r=".55"/><circle cx="231" cy="31" r=".55"/><circle cx="233" cy="31" r=".55"/><circle cx="235" cy="31" r=".55"/><circle cx="237" cy="31" r=".55"/><circle cx="239" cy="31" r=".55"/><circle cx="241" cy="31" r=".55"/><circle cx="243" cy="31" r=".55"/><circle cx="245" cy="31" r=".55"/><circle cx="247" cy="31" r=".55"/><circle cx="249" cy="31" r=".55"/><circle cx="251" cy="31" r=".55"/><circle cx="253" cy="31" r=".55"/><circle cx="255" cy="31" r=".55"/><circle cx="257" cy="31" r=".55"/><circle cx="259" cy="31" r=".55"/><circle cx="261" cy="31" r=".55"/><circle cx="263" cy="31" r=".55"/><circle cx="265" cy="31" r=".55"/><circle cx="267" cy="31" r=".55"/><circle cx="269" cy="31" r=".55"/><circle cx="271" cy="31" r=".55"/><circle cx="273" cy="31" r=".55"/><circle cx="275" cy="31" r=".55"/><circle cx="277" cy="31" r=".55"/><circle cx="279" cy="31" r=".55"/><circle cx="281" cy="31" r=".55"/><circle cx="283" cy="31" r=".55"/><circle cx="285" cy="31" r=".55"/><circle cx="287" cy="31" r=".55"/><circle cx="289" cy="31" r=".55"/><circle cx="291" cy="31" r=".55"/><circle cx="293" cy="31" r=".55"/><circle cx="295" cy="31" r=".55"/><circle cx="297" cy="31" r=".55"/><circle cx="299" cy="31" r=".55"/><circle cx="301" cy="31" r=".55"/><circle cx="303" cy="31" r=".55"/><circle cx="305" cy="31" r=".55"/><circle cx="307" cy="31" r=".55"/><circle cx="309" cy="31" r=".55"/><circle cx="311" cy="31" r=".55"/><circle cx="313" cy="31" r=".55"/><circle cx="315" cy="31" r=".55"/><circle cx="317" cy="31" r=".55"/><circle cx="319" cy="31" r=".55"/><circle cx="321" cy="31" r=".55"/><circle cx="323" cy="31" r=".55"/><circle cx="325" cy="31" r=".55"/><circle cx="327" cy="31" r=".55"/><circle cx="331" cy="31" r=".55"/><circle cx="333" cy="31" r=".55"/><circle cx="339" cy="31" r=".55"/><circle cx="3" cy="33" r=".55"/><circle cx="9" cy="33" r=".55"/><circle cx="11" cy="33" r=".55"/><circle cx="13" cy="33" r=".55"/><circle cx="15" cy="33" r=".55"/><circle cx="19" cy="33" r=".55"/><circle cx="21" cy="33" r=".55"/><circle cx="23" cy="33" r=".55"/><circle cx="25" cy="33" r=".55"/><circle cx="27" cy="33" r=".55"/><circle cx="29" cy="33" r=".55"/><circle cx="41" cy="33" r=".55"/><circle cx="45" cy="33" r=".55"/><circle cx="51" cy="33" r=".55"/><circle cx="53" cy="33" r=".55"/><circle cx="55" cy="33" r=".55"/><circle cx="57" cy="33" r=".55"/><circle cx="59" cy="33" r=".55"/><circle cx="61" cy="33" r=".55"/><circle cx="63" cy="33" r=".55"/><circle cx="65" cy="33" r=".55"/><circle cx="67" cy="33" r=".55"/><circle cx="69" cy="33" r=".55"/><circle cx="71" cy="33" r=".55"/><circle cx="73" cy="33" r=".55"/><circle cx="75" cy="33" r=".55"/><circle cx="77" cy="33" r=".55"/><circle cx="79" cy="33" r=".55"/><circle cx="81" cy="33" r=".55"/><circle cx="83" cy="33" r=".55"/><circle cx="85" cy="33" r=".55"/><circle cx="87" cy="33" r=".55"/><circle cx="89" cy="33" r=".55"/><circle cx="99" cy="33" r=".55"/><circle cx="101" cy="33" r=".55"/><circle cx="103" cy="33" r=".55"/><circle cx="105" cy="33" r=".55"/><circle cx="107" cy="33" r=".55"/><circle cx="109" cy="33" r=".55"/><circle cx="111" cy="33" r=".55"/><circle cx="113" cy="33" r=".55"/><circle cx="115" cy="33" r=".55"/><circle cx="119" cy="33" r=".55"/><circle cx="173" cy="33" r=".55"/><circle cx="175" cy="33" r=".55"/><circle cx="177" cy="33" r=".55"/><circle cx="185" cy="33" r=".55"/><circle cx="187" cy="33" r=".55"/><circle cx="189" cy="33" r=".55"/><circle cx="191" cy="33" r=".55"/><circle cx="193" cy="33" r=".55"/><circle cx="195" cy="33" r=".55"/><circle cx="197" cy="33" r=".55"/><circle cx="199" cy="33" r=".55"/><circle cx="201" cy="33" r=".55"/><circle cx="203" cy="33" r=".55"/><circle cx="205" cy="33" r=".55"/><circle cx="207" cy="33" r=".55"/><circle cx="209" cy="33" r=".55"/><circle cx="211" cy="33" r=".55"/><circle cx="213" cy="33" r=".55"/><circle cx="215" cy="33" r=".55"/><circle cx="217" cy="33" r=".55"/><circle cx="219" cy="33" r=".55"/><circle cx="221" cy="33" r=".55"/><circle cx="223" cy="33" r=".55"/><circle cx="225" cy="33" r=".55"/><circle cx="227" cy="33" r=".55"/><circle cx="229" cy="33" r=".55"/><circle cx="231" cy="33" r=".55"/><circle cx="233" cy="33" r=".55"/><circle cx="235" cy="33" r=".55"/><circle cx="237" cy="33" r=".55"/><circle cx="239" cy="33" r=".55"/><circle cx="241" cy="33" r=".55"/><circle cx="243" cy="33" r=".55"/><circle cx="245" cy="33" r=".55"/><circle cx="247" cy="33" r=".55"/><circle cx="249" cy="33" r=".55"/><circle cx="251" cy="33" r=".55"/><circle cx="253" cy="33" r=".55"/><circle cx="255" cy="33" r=".55"/><circle cx="257" cy="33" r=".55"/><circle cx="259" cy="33" r=".55"/><circle cx="261" cy="33" r=".55"/><circle cx="263" cy="33" r=".55"/><circle cx="265" cy="33" r=".55"/><circle cx="267" cy="33" r=".55"/><circle cx="269" cy="33" r=".55"/><circle cx="271" cy="33" r=".55"/><circle cx="273" cy="33" r=".55"/><circle cx="275" cy="33" r=".55"/><circle cx="277" cy="33" r=".55"/><circle cx="279" cy="33" r=".55"/><circle cx="281" cy="33" r=".55"/><circle cx="283" cy="33" r=".55"/><circle cx="285" cy="33" r=".55"/><circle cx="287" cy="33" r=".55"/><circle cx="289" cy="33" r=".55"/><circle cx="291" cy="33" r=".55"/><circle cx="293" cy="33" r=".55"/><circle cx="295" cy="33" r=".55"/><circle cx="299" cy="33" r=".55"/><circle cx="301" cy="33" r=".55"/><circle cx="303" cy="33" r=".55"/><circle cx="305" cy="33" r=".55"/><circle cx="307" cy="33" r=".55"/><circle cx="309" cy="33" r=".55"/><circle cx="311" cy="33" r=".55"/><circle cx="313" cy="33" r=".55"/><circle cx="315" cy="33" r=".55"/><circle cx="317" cy="33" r=".55"/><circle cx="319" cy="33" r=".55"/><circle cx="321" cy="33" r=".55"/><circle cx="323" cy="33" r=".55"/><circle cx="325" cy="33" r=".55"/><circle cx="327" cy="33" r=".55"/><circle cx="331" cy="33" r=".55"/><circle cx="335" cy="33" r=".55"/><circle cx="337" cy="33" r=".55"/><circle cx="339" cy="33" r=".55"/><circle cx="341" cy="33" r=".55"/><circle cx="357" cy="33" r=".55"/><circle cx="3" cy="35" r=".55"/><circle cx="13" cy="35" r=".55"/><circle cx="19" cy="35" r=".55"/><circle cx="21" cy="35" r=".55"/><circle cx="47" cy="35" r=".55"/><circle cx="49" cy="35" r=".55"/><circle cx="51" cy="35" r=".55"/><circle cx="53" cy="35" r=".55"/><circle cx="55" cy="35" r=".55"/><circle cx="57" cy="35" r=".55"/><circle cx="59" cy="35" r=".55"/><circle cx="61" cy="35" r=".55"/><circle cx="63" cy="35" r=".55"/><circle cx="65" cy="35" r=".55"/><circle cx="67" cy="35" r=".55"/><circle cx="69" cy="35" r=".55"/><circle cx="71" cy="35" r=".55"/><circle cx="73" cy="35" r=".55"/><circle cx="75" cy="35" r=".55"/><circle cx="77" cy="35" r=".55"/><circle cx="79" cy="35" r=".55"/><circle cx="81" cy="35" r=".55"/><circle cx="83" cy="35" r=".55"/><circle cx="85" cy="35" r=".55"/><circle cx="87" cy="35" r=".55"/><circle cx="89" cy="35" r=".55"/><circle cx="91" cy="35" r=".55"/><circle cx="93" cy="35" r=".55"/><circle cx="95" cy="35" r=".55"/><circle cx="97" cy="35" r=".55"/><circle cx="99" cy="35" r=".55"/><circle cx="101" cy="35" r=".55"/><circle cx="103" cy="35" r=".55"/><circle cx="105" cy="35" r=".55"/><circle cx="107" cy="35" r=".55"/><circle cx="109" cy="35" r=".55"/><circle cx="111" cy="35" r=".55"/><circle cx="113" cy="35" r=".55"/><circle cx="115" cy="35" r=".55"/><circle cx="117" cy="35" r=".55"/><circle cx="119" cy="35" r=".55"/><circle cx="173" cy="35" r=".55"/><circle cx="175" cy="35" r=".55"/><circle cx="177" cy="35" r=".55"/><circle cx="179" cy="35" r=".55"/><circle cx="181" cy="35" r=".55"/><circle cx="187" cy="35" r=".55"/><circle cx="189" cy="35" r=".55"/><circle cx="191" cy="35" r=".55"/><circle cx="193" cy="35" r=".55"/><circle cx="195" cy="35" r=".55"/><circle cx="197" cy="35" r=".55"/><circle cx="199" cy="35" r=".55"/><circle cx="201" cy="35" r=".55"/><circle cx="203" cy="35" r=".55"/><circle cx="205" cy="35" r=".55"/><circle cx="207" cy="35" r=".55"/><circle cx="209" cy="35" r=".55"/><circle cx="211" cy="35" r=".55"/><circle cx="213" cy="35" r=".55"/><circle cx="215" cy="35" r=".55"/><circle cx="217" cy="35" r=".55"/><circle cx="219" cy="35" r=".55"/><circle cx="221" cy="35" r=".55"/><circle cx="223" cy="35" r=".55"/><circle cx="225" cy="35" r=".55"/><circle cx="227" cy="35" r=".55"/><circle cx="229" cy="35" r=".55"/><circle cx="231" cy="35" r=".55"/><circle cx="233" cy="35" r=".55"/><circle cx="235" cy="35" r=".55"/><circle cx="237" cy="35" r=".55"/><circle cx="239" cy="35" r=".55"/><circle cx="241" cy="35" r=".55"/><circle cx="243" cy="35" r=".55"/><circle cx="245" cy="35" r=".55"/><circle cx="247" cy="35" r=".55"/><circle cx="249" cy="35" r=".55"/><circle cx="251" cy="35" r=".55"/><circle cx="253" cy="35" r=".55"/><circle cx="255" cy="35" r=".55"/><circle cx="257" cy="35" r=".55"/><circle cx="259" cy="35" r=".55"/><circle cx="261" cy="35" r=".55"/><circle cx="263" cy="35" r=".55"/><circle cx="265" cy="35" r=".55"/><circle cx="267" cy="35" r=".55"/><circle cx="269" cy="35" r=".55"/><circle cx="271" cy="35" r=".55"/><circle cx="273" cy="35" r=".55"/><circle cx="275" cy="35" r=".55"/><circle cx="277" cy="35" r=".55"/><circle cx="279" cy="35" r=".55"/><circle cx="281" cy="35" r=".55"/><circle cx="283" cy="35" r=".55"/><circle cx="285" cy="35" r=".55"/><circle cx="287" cy="35" r=".55"/><circle cx="289" cy="35" r=".55"/><circle cx="291" cy="35" r=".55"/><circle cx="293" cy="35" r=".55"/><circle cx="295" cy="35" r=".55"/><circle cx="297" cy="35" r=".55"/><circle cx="299" cy="35" r=".55"/><circle cx="301" cy="35" r=".55"/><circle cx="303" cy="35" r=".55"/><circle cx="305" cy="35" r=".55"/><circle cx="307" cy="35" r=".55"/><circle cx="309" cy="35" r=".55"/><circle cx="311" cy="35" r=".55"/><circle cx="313" cy="35" r=".55"/><circle cx="315" cy="35" r=".55"/><circle cx="317" cy="35" r=".55"/><circle cx="323" cy="35" r=".55"/><circle cx="335" cy="35" r=".55"/><circle cx="337" cy="35" r=".55"/><circle cx="339" cy="35" r=".55"/><circle cx="341" cy="35" r=".55"/><circle cx="49" cy="37" r=".55"/><circle cx="51" cy="37" r=".55"/><circle cx="53" cy="37" r=".55"/><circle cx="55" cy="37" r=".55"/><circle cx="57" cy="37" r=".55"/><circle cx="59" cy="37" r=".55"/><circle cx="61" cy="37" r=".55"/><circle cx="63" cy="37" r=".55"/><circle cx="65" cy="37" r=".55"/><circle cx="67" cy="37" r=".55"/><circle cx="69" cy="37" r=".55"/><circle cx="71" cy="37" r=".55"/><circle cx="73" cy="37" r=".55"/><circle cx="75" cy="37" r=".55"/><circle cx="77" cy="37" r=".55"/><circle cx="79" cy="37" r=".55"/><circle cx="81" cy="37" r=".55"/><circle cx="83" cy="37" r=".55"/><circle cx="85" cy="37" r=".55"/><circle cx="87" cy="37" r=".55"/><circle cx="89" cy="37" r=".55"/><circle cx="91" cy="37" r=".55"/><circle cx="93" cy="37" r=".55"/><circle cx="95" cy="37" r=".55"/><circle cx="97" cy="37" r=".55"/><circle cx="99" cy="37" r=".55"/><circle cx="101" cy="37" r=".55"/><circle cx="103" cy="37" r=".55"/><circle cx="105" cy="37" r=".55"/><circle cx="107" cy="37" r=".55"/><circle cx="109" cy="37" r=".55"/><circle cx="111" cy="37" r=".55"/><circle cx="113" cy="37" r=".55"/><circle cx="115" cy="37" r=".55"/><circle cx="117" cy="37" r=".55"/><circle cx="119" cy="37" r=".55"/><circle cx="121" cy="37" r=".55"/><circle cx="123" cy="37" r=".55"/><circle cx="125" cy="37" r=".55"/><circle cx="171" cy="37" r=".55"/><circle cx="173" cy="37" r=".55"/><circle cx="175" cy="37" r=".55"/><circle cx="177" cy="37" r=".55"/><circle cx="179" cy="37" r=".55"/><circle cx="181" cy="37" r=".55"/><circle cx="183" cy="37" r=".55"/><circle cx="185" cy="37" r=".55"/><circle cx="187" cy="37" r=".55"/><circle cx="189" cy="37" r=".55"/><circle cx="191" cy="37" r=".55"/><circle cx="193" cy="37" r=".55"/><circle cx="195" cy="37" r=".55"/><circle cx="197" cy="37" r=".55"/><circle cx="199" cy="37" r=".55"/><circle cx="201" cy="37" r=".55"/><circle cx="203" cy="37" r=".55"/><circle cx="205" cy="37" r=".55"/><circle cx="207" cy="37" r=".55"/><circle cx="209" cy="37" r=".55"/><circle cx="211" cy="37" r=".55"/><circle cx="213" cy="37" r=".55"/><circle cx="215" cy="37" r=".55"/><circle cx="217" cy="37" r=".55"/><circle cx="219" cy="37" r=".55"/><circle cx="221" cy="37" r=".55"/><circle cx="223" cy="37" r=".55"/><circle cx="225" cy="37" r=".55"/><circle cx="227" cy="37" r=".55"/><circle cx="229" cy="37" r=".55"/><circle cx="231" cy="37" r=".55"/><circle cx="233" cy="37" r=".55"/><circle cx="235" cy="37" r=".55"/><circle cx="237" cy="37" r=".55"/><circle cx="239" cy="37" r=".55"/><circle cx="259" cy="37" r=".55"/><circle cx="261" cy="37" r=".55"/><circle cx="263" cy="37" r=".55"/><circle cx="265" cy="37" r=".55"/><circle cx="267" cy="37" r=".55"/><circle cx="269" cy="37" r=".55"/><circle cx="271" cy="37" r=".55"/><circle cx="273" cy="37" r=".55"/><circle cx="275" cy="37" r=".55"/><circle cx="277" cy="37" r=".55"/><circle cx="279" cy="37" r=".55"/><circle cx="281" cy="37" r=".55"/><circle cx="283" cy="37" r=".55"/><circle cx="285" cy="37" r=".55"/><circle cx="287" cy="37" r=".55"/><circle cx="289" cy="37" r=".55"/><circle cx="291" cy="37" r=".55"/><circle cx="293" cy="37" r=".55"/><circle cx="295" cy="37" r=".55"/><circle cx="297" cy="37" r=".55"/><circle cx="299" cy="37" r=".55"/><circle cx="301" cy="37" r=".55"/><circle cx="303" cy="37" r=".55"/><circle cx="305" cy="37" r=".55"/><circle cx="307" cy="37" r=".55"/><circle cx="309" cy="37" r=".55"/><circle cx="311" cy="37" r=".55"/><circle cx="313" cy="37" r=".55"/><circle cx="315" cy="37" r=".55"/><circle cx="317" cy="37" r=".55"/><circle cx="319" cy="37" r=".55"/><circle cx="321" cy="37" r=".55"/><circle cx="323" cy="37" r=".55"/><circle cx="335" cy="37" r=".55"/><circle cx="337" cy="37" r=".55"/><circle cx="339" cy="37" r=".55"/><circle cx="3" cy="39" r=".55"/><circle cx="53" cy="39" r=".55"/><circle cx="55" cy="39" r=".55"/><circle cx="57" cy="39" r=".55"/><circle cx="59" cy="39" r=".55"/><circle cx="61" cy="39" r=".55"/><circle cx="63" cy="39" r=".55"/><circle cx="65" cy="39" r=".55"/><circle cx="67" cy="39" r=".55"/><circle cx="77" cy="39" r=".55"/><circle cx="79" cy="39" r=".55"/><circle cx="81" cy="39" r=".55"/><circle cx="83" cy="39" r=".55"/><circle cx="85" cy="39" r=".55"/><circle cx="87" cy="39" r=".55"/><circle cx="89" cy="39" r=".55"/><circle cx="91" cy="39" r=".55"/><circle cx="93" cy="39" r=".55"/><circle cx="95" cy="39" r=".55"/><circle cx="97" cy="39" r=".55"/><circle cx="99" cy="39" r=".55"/><circle cx="101" cy="39" r=".55"/><circle cx="103" cy="39" r=".55"/><circle cx="105" cy="39" r=".55"/><circle cx="107" cy="39" r=".55"/><circle cx="109" cy="39" r=".55"/><circle cx="111" cy="39" r=".55"/><circle cx="113" cy="39" r=".55"/><circle cx="115" cy="39" r=".55"/><circle cx="117" cy="39" r=".55"/><circle cx="119" cy="39" r=".55"/><circle cx="121" cy="39" r=".55"/><circle cx="123" cy="39" r=".55"/><circle cx="125" cy="39" r=".55"/><circle cx="171" cy="39" r=".55"/><circle cx="173" cy="39" r=".55"/><circle cx="175" cy="39" r=".55"/><circle cx="177" cy="39" r=".55"/><circle cx="179" cy="39" r=".55"/><circle cx="181" cy="39" r=".55"/><circle cx="183" cy="39" r=".55"/><circle cx="185" cy="39" r=".55"/><circle cx="187" cy="39" r=".55"/><circle cx="189" cy="39" r=".55"/><circle cx="191" cy="39" r=".55"/><circle cx="193" cy="39" r=".55"/><circle cx="195" cy="39" r=".55"/><circle cx="197" cy="39" r=".55"/><circle cx="201" cy="39" r=".55"/><circle cx="203" cy="39" r=".55"/><circle cx="205" cy="39" r=".55"/><circle cx="207" cy="39" r=".55"/><circle cx="209" cy="39" r=".55"/><circle cx="211" cy="39" r=".55"/><circle cx="213" cy="39" r=".55"/><circle cx="215" cy="39" r=".55"/><circle cx="217" cy="39" r=".55"/><circle cx="219" cy="39" r=".55"/><circle cx="221" cy="39" r=".55"/><circle cx="223" cy="39" r=".55"/><circle cx="227" cy="39" r=".55"/><circle cx="237" cy="39" r=".55"/><circle cx="261" cy="39" r=".55"/><circle cx="263" cy="39" r=".55"/><circle cx="265" cy="39" r=".55"/><circle cx="267" cy="39" r=".55"/><circle cx="269" cy="39" r=".55"/><circle cx="271" cy="39" r=".55"/><circle cx="273" cy="39" r=".55"/><circle cx="275" cy="39" r=".55"/><circle cx="277" cy="39" r=".55"/><circle cx="279" cy="39" r=".55"/><circle cx="281" cy="39" r=".55"/><circle cx="283" cy="39" r=".55"/><circle cx="285" cy="39" r=".55"/><circle cx="287" cy="39" r=".55"/><circle cx="289" cy="39" r=".55"/><circle cx="291" cy="39" r=".55"/><circle cx="293" cy="39" r=".55"/><circle cx="295" cy="39" r=".55"/><circle cx="297" cy="39" r=".55"/><circle cx="299" cy="39" r=".55"/><circle cx="301" cy="39" r=".55"/><circle cx="303" cy="39" r=".55"/><circle cx="305" cy="39" r=".55"/><circle cx="307" cy="39" r=".55"/><circle cx="309" cy="39" r=".55"/><circle cx="311" cy="39" r=".55"/><circle cx="313" cy="39" r=".55"/><circle cx="315" cy="39" r=".55"/><circle cx="317" cy="39" r=".55"/><circle cx="319" cy="39" r=".55"/><circle cx="321" cy="39" r=".55"/><circle cx="323" cy="39" r=".55"/><circle cx="335" cy="39" r=".55"/><circle cx="337" cy="39" r=".55"/><circle cx="357" cy="39" r=".55"/><circle cx="53" cy="41" r=".55"/><circle cx="55" cy="41" r=".55"/><circle cx="57" cy="41" r=".55"/><circle cx="59" cy="41" r=".55"/><circle cx="61" cy="41" r=".55"/><circle cx="63" cy="41" r=".55"/><circle cx="65" cy="41" r=".55"/><circle cx="67" cy="41" r=".55"/><circle cx="79" cy="41" r=".55"/><circle cx="81" cy="41" r=".55"/><circle cx="83" cy="41" r=".55"/><circle cx="85" cy="41" r=".55"/><circle cx="87" cy="41" r=".55"/><circle cx="89" cy="41" r=".55"/><circle cx="91" cy="41" r=".55"/><circle cx="93" cy="41" r=".55"/><circle cx="95" cy="41" r=".55"/><circle cx="97" cy="41" r=".55"/><circle cx="99" cy="41" r=".55"/><circle cx="101" cy="41" r=".55"/><circle cx="103" cy="41" r=".55"/><circle cx="105" cy="41" r=".55"/><circle cx="107" cy="41" r=".55"/><circle cx="109" cy="41" r=".55"/><circle cx="111" cy="41" r=".55"/><circle cx="113" cy="41" r=".55"/><circle cx="115" cy="41" r=".55"/><circle cx="117" cy="41" r=".55"/><circle cx="119" cy="41" r=".55"/><circle cx="123" cy="41" r=".55"/><circle cx="125" cy="41" r=".55"/><circle cx="127" cy="41" r=".55"/><circle cx="173" cy="41" r=".55"/><circle cx="175" cy="41" r=".55"/><circle cx="177" cy="41" r=".55"/><circle cx="179" cy="41" r=".55"/><circle cx="181" cy="41" r=".55"/><circle cx="185" cy="41" r=".55"/><circle cx="187" cy="41" r=".55"/><circle cx="189" cy="41" r=".55"/><circle cx="191" cy="41" r=".55"/><circle cx="193" cy="41" r=".55"/><circle cx="197" cy="41" r=".55"/><circle cx="199" cy="41" r=".55"/><circle cx="201" cy="41" r=".55"/><circle cx="203" cy="41" r=".55"/><circle cx="205" cy="41" r=".55"/><circle cx="207" cy="41" r=".55"/><circle cx="209" cy="41" r=".55"/><circle cx="211" cy="41" r=".55"/><circle cx="213" cy="41" r=".55"/><circle cx="215" cy="41" r=".55"/><circle cx="217" cy="41" r=".55"/><circle cx="219" cy="41" r=".55"/><circle cx="221" cy="41" r=".55"/><circle cx="263" cy="41" r=".55"/><circle cx="265" cy="41" r=".55"/><circle cx="267" cy="41" r=".55"/><circle cx="277" cy="41" r=".55"/><circle cx="281" cy="41" r=".55"/><circle cx="283" cy="41" r=".55"/><circle cx="285" cy="41" r=".55"/><circle cx="287" cy="41" r=".55"/><circle cx="289" cy="41" r=".55"/><circle cx="291" cy="41" r=".55"/><circle cx="301" cy="41" r=".55"/><circle cx="303" cy="41" r=".55"/><circle cx="305" cy="41" r=".55"/><circle cx="307" cy="41" r=".55"/><circle cx="309" cy="41" r=".55"/><circle cx="311" cy="41" r=".55"/><circle cx="313" cy="41" r=".55"/><circle cx="315" cy="41" r=".55"/><circle cx="317" cy="41" r=".55"/><circle cx="319" cy="41" r=".55"/><circle cx="321" cy="41" r=".55"/><circle cx="323" cy="41" r=".55"/><circle cx="3" cy="43" r=".55"/><circle cx="57" cy="43" r=".55"/><circle cx="59" cy="43" r=".55"/><circle cx="65" cy="43" r=".55"/><circle cx="67" cy="43" r=".55"/><circle cx="81" cy="43" r=".55"/><circle cx="83" cy="43" r=".55"/><circle cx="85" cy="43" r=".55"/><circle cx="87" cy="43" r=".55"/><circle cx="89" cy="43" r=".55"/><circle cx="91" cy="43" r=".55"/><circle cx="93" cy="43" r=".55"/><circle cx="95" cy="43" r=".55"/><circle cx="97" cy="43" r=".55"/><circle cx="99" cy="43" r=".55"/><circle cx="101" cy="43" r=".55"/><circle cx="103" cy="43" r=".55"/><circle cx="105" cy="43" r=".55"/><circle cx="107" cy="43" r=".55"/><circle cx="109" cy="43" r=".55"/><circle cx="111" cy="43" r=".55"/><circle cx="113" cy="43" r=".55"/><circle cx="115" cy="43" r=".55"/><circle cx="117" cy="43" r=".55"/><circle cx="119" cy="43" r=".55"/><circle cx="123" cy="43" r=".55"/><circle cx="125" cy="43" r=".55"/><circle cx="127" cy="43" r=".55"/><circle cx="175" cy="43" r=".55"/><circle cx="177" cy="43" r=".55"/><circle cx="185" cy="43" r=".55"/><circle cx="187" cy="43" r=".55"/><circle cx="189" cy="43" r=".55"/><circle cx="191" cy="43" r=".55"/><circle cx="193" cy="43" r=".55"/><circle cx="195" cy="43" r=".55"/><circle cx="197" cy="43" r=".55"/><circle cx="199" cy="43" r=".55"/><circle cx="201" cy="43" r=".55"/><circle cx="203" cy="43" r=".55"/><circle cx="205" cy="43" r=".55"/><circle cx="207" cy="43" r=".55"/><circle cx="211" cy="43" r=".55"/><circle cx="213" cy="43" r=".55"/><circle cx="215" cy="43" r=".55"/><circle cx="217" cy="43" r=".55"/><circle cx="219" cy="43" r=".55"/><circle cx="299" cy="43" r=".55"/><circle cx="301" cy="43" r=".55"/><circle cx="305" cy="43" r=".55"/><circle cx="307" cy="43" r=".55"/><circle cx="309" cy="43" r=".55"/><circle cx="311" cy="43" r=".55"/><circle cx="313" cy="43" r=".55"/><circle cx="315" cy="43" r=".55"/><circle cx="317" cy="43" r=".55"/><circle cx="319" cy="43" r=".55"/><circle cx="321" cy="43" r=".55"/><circle cx="323" cy="43" r=".55"/><circle cx="357" cy="43" r=".55"/><circle cx="57" cy="45" r=".55"/><circle cx="59" cy="45" r=".55"/><circle cx="65" cy="45" r=".55"/><circle cx="67" cy="45" r=".55"/><circle cx="69" cy="45" r=".55"/><circle cx="85" cy="45" r=".55"/><circle cx="87" cy="45" r=".55"/><circle cx="89" cy="45" r=".55"/><circle cx="91" cy="45" r=".55"/><circle cx="93" cy="45" r=".55"/><circle cx="95" cy="45" r=".55"/><circle cx="97" cy="45" r=".55"/><circle cx="99" cy="45" r=".55"/><circle cx="101" cy="45" r=".55"/><circle cx="103" cy="45" r=".55"/><circle cx="105" cy="45" r=".55"/><circle cx="107" cy="45" r=".55"/><circle cx="109" cy="45" r=".55"/><circle cx="111" cy="45" r=".55"/><circle cx="113" cy="45" r=".55"/><circle cx="115" cy="45" r=".55"/><circle cx="117" cy="45" r=".55"/><circle cx="119" cy="45" r=".55"/><circle cx="183" cy="45" r=".55"/><circle cx="185" cy="45" r=".55"/><circle cx="187" cy="45" r=".55"/><circle cx="189" cy="45" r=".55"/><circle cx="191" cy="45" r=".55"/><circle cx="193" cy="45" r=".55"/><circle cx="195" cy="45" r=".55"/><circle cx="197" cy="45" r=".55"/><circle cx="203" cy="45" r=".55"/><circle cx="205" cy="45" r=".55"/><circle cx="211" cy="45" r=".55"/><circle cx="215" cy="45" r=".55"/><circle cx="217" cy="45" r=".55"/><circle cx="229" cy="45" r=".55"/><circle cx="307" cy="45" r=".55"/><circle cx="309" cy="45" r=".55"/><circle cx="311" cy="45" r=".55"/><circle cx="313" cy="45" r=".55"/><circle cx="315" cy="45" r=".55"/><circle cx="317" cy="45" r=".55"/><circle cx="321" cy="45" r=".55"/><circle cx="57" cy="47" r=".55"/><circle cx="59" cy="47" r=".55"/><circle cx="85" cy="47" r=".55"/><circle cx="87" cy="47" r=".55"/><circle cx="89" cy="47" r=".55"/><circle cx="91" cy="47" r=".55"/><circle cx="93" cy="47" r=".55"/><circle cx="95" cy="47" r=".55"/><circle cx="97" cy="47" r=".55"/><circle cx="101" cy="47" r=".55"/><circle cx="103" cy="47" r=".55"/><circle cx="105" cy="47" r=".55"/><circle cx="107" cy="47" r=".55"/><circle cx="109" cy="47" r=".55"/><circle cx="111" cy="47" r=".55"/><circle cx="115" cy="47" r=".55"/><circle cx="173" cy="47" r=".55"/><circle cx="179" cy="47" r=".55"/><circle cx="197" cy="47" r=".55"/><circle cx="199" cy="47" r=".55"/><circle cx="201" cy="47" r=".55"/><circle cx="203" cy="47" r=".55"/><circle cx="207" cy="47" r=".55"/><circle cx="209" cy="47" r=".55"/><circle cx="219" cy="47" r=".55"/><circle cx="221" cy="47" r=".55"/><circle cx="223" cy="47" r=".55"/><circle cx="227" cy="47" r=".55"/><circle cx="229" cy="47" r=".55"/><circle cx="305" cy="47" r=".55"/><circle cx="307" cy="47" r=".55"/><circle cx="309" cy="47" r=".55"/><circle cx="311" cy="47" r=".55"/><circle cx="313" cy="47" r=".55"/><circle cx="321" cy="47" r=".55"/><circle cx="323" cy="47" r=".55"/><circle cx="325" cy="47" r=".55"/><circle cx="3" cy="49" r=".55"/><circle cx="57" cy="49" r=".55"/><circle cx="59" cy="49" r=".55"/><circle cx="83" cy="49" r=".55"/><circle cx="85" cy="49" r=".55"/><circle cx="87" cy="49" r=".55"/><circle cx="89" cy="49" r=".55"/><circle cx="91" cy="49" r=".55"/><circle cx="93" cy="49" r=".55"/><circle cx="95" cy="49" r=".55"/><circle cx="97" cy="49" r=".55"/><circle cx="99" cy="49" r=".55"/><circle cx="101" cy="49" r=".55"/><circle cx="103" cy="49" r=".55"/><circle cx="105" cy="49" r=".55"/><circle cx="107" cy="49" r=".55"/><circle cx="109" cy="49" r=".55"/><circle cx="111" cy="49" r=".55"/><circle cx="113" cy="49" r=".55"/><circle cx="171" cy="49" r=".55"/><circle cx="173" cy="49" r=".55"/><circle cx="201" cy="49" r=".55"/><circle cx="203" cy="49" r=".55"/><circle cx="205" cy="49" r=".55"/><circle cx="207" cy="49" r=".55"/><circle cx="209" cy="49" r=".55"/><circle cx="213" cy="49" r=".55"/><circle cx="215" cy="49" r=".55"/><circle cx="217" cy="49" r=".55"/><circle cx="221" cy="49" r=".55"/><circle cx="223" cy="49" r=".55"/><circle cx="229" cy="49" r=".55"/><circle cx="231" cy="49" r=".55"/><circle cx="297" cy="49" r=".55"/><circle cx="301" cy="49" r=".55"/><circle cx="303" cy="49" r=".55"/><circle cx="305" cy="49" r=".55"/><circle cx="307" cy="49" r=".55"/><circle cx="309" cy="49" r=".55"/><circle cx="319" cy="49" r=".55"/><circle cx="321" cy="49" r=".55"/><circle cx="357" cy="49" r=".55"/><circle cx="57" cy="51" r=".55"/><circle cx="59" cy="51" r=".55"/><circle cx="73" cy="51" r=".55"/><circle cx="75" cy="51" r=".55"/><circle cx="85" cy="51" r=".55"/><circle cx="87" cy="51" r=".55"/><circle cx="89" cy="51" r=".55"/><circle cx="91" cy="51" r=".55"/><circle cx="93" cy="51" r=".55"/><circle cx="95" cy="51" r=".55"/><circle cx="97" cy="51" r=".55"/><circle cx="99" cy="51" r=".55"/><circle cx="101" cy="51" r=".55"/><circle cx="103" cy="51" r=".55"/><circle cx="105" cy="51" r=".55"/><circle cx="107" cy="51" r=".55"/><circle cx="231" cy="51" r=".55"/><circle cx="293" cy="51" r=".55"/><circle cx="295" cy="51" r=".55"/><circle cx="297" cy="51" r=".55"/><circle cx="299" cy="51" r=".55"/><circle cx="301" cy="51" r=".55"/><circle cx="303" cy="51" r=".55"/><circle cx="305" cy="51" r=".55"/><circle cx="307" cy="51" r=".55"/><circle cx="319" cy="51" r=".55"/><circle cx="321" cy="51" r=".55"/><circle cx="3" cy="53" r=".55"/><circle cx="85" cy="53" r=".55"/><circle cx="87" cy="53" r=".55"/><circle cx="89" cy="53" r=".55"/><circle cx="91" cy="53" r=".55"/><circle cx="93" cy="53" r=".55"/><circle cx="95" cy="53" r=".55"/><circle cx="97" cy="53" r=".55"/><circle cx="99" cy="53" r=".55"/><circle cx="101" cy="53" r=".55"/><circle cx="103" cy="53" r=".55"/><circle cx="105" cy="53" r=".55"/><circle cx="229" cy="53" r=".55"/><circle cx="231" cy="53" r=".55"/><circle cx="293" cy="53" r=".55"/><circle cx="295" cy="53" r=".55"/><circle cx="301" cy="53" r=".55"/><circle cx="303" cy="53" r=".55"/><circle cx="305" cy="53" r=".55"/><circle cx="307" cy="53" r=".55"/><circle cx="309" cy="53" r=".55"/><circle cx="317" cy="53" r=".55"/><circle cx="319" cy="53" r=".55"/><circle cx="321" cy="53" r=".55"/><circle cx="85" cy="55" r=".55"/><circle cx="87" cy="55" r=".55"/><circle cx="89" cy="55" r=".55"/><circle cx="91" cy="55" r=".55"/><circle cx="93" cy="55" r=".55"/><circle cx="95" cy="55" r=".55"/><circle cx="97" cy="55" r=".55"/><circle cx="99" cy="55" r=".55"/><circle cx="101" cy="55" r=".55"/><circle cx="103" cy="55" r=".55"/><circle cx="105" cy="55" r=".55"/><circle cx="281" cy="55" r=".55"/><circle cx="289" cy="55" r=".55"/><circle cx="293" cy="55" r=".55"/><circle cx="295" cy="55" r=".55"/><circle cx="297" cy="55" r=".55"/><circle cx="301" cy="55" r=".55"/><circle cx="303" cy="55" r=".55"/><circle cx="305" cy="55" r=".55"/><circle cx="307" cy="55" r=".55"/><circle cx="309" cy="55" r=".55"/><circle cx="311" cy="55" r=".55"/><circle cx="313" cy="55" r=".55"/><circle cx="315" cy="55" r=".55"/><circle cx="317" cy="55" r=".55"/><circle cx="319" cy="55" r=".55"/><circle cx="3" cy="57" r=".55"/><circle cx="85" cy="57" r=".55"/><circle cx="87" cy="57" r=".55"/><circle cx="89" cy="57" r=".55"/><circle cx="91" cy="57" r=".55"/><circle cx="93" cy="57" r=".55"/><circle cx="95" cy="57" r=".55"/><circle cx="97" cy="57" r=".55"/><circle cx="99" cy="57" r=".55"/><circle cx="101" cy="57" r=".55"/><circle cx="255" cy="57" r=".55"/><circle cx="277" cy="57" r=".55"/><circle cx="279" cy="57" r=".55"/><circle cx="281" cy="57" r=".55"/><circle cx="283" cy="57" r=".55"/><circle cx="285" cy="57" r=".55"/><circle cx="287" cy="57" r=".55"/><circle cx="289" cy="57" r=".55"/><circle cx="291" cy="57" r=".55"/><circle cx="295" cy="57" r=".55"/><circle cx="297" cy="57" r=".55"/><circle cx="303" cy="57" r=".55"/><circle cx="305" cy="57" r=".55"/><circle cx="307" cy="57" r=".55"/><circle cx="309" cy="57" r=".55"/><circle cx="311" cy="57" r=".55"/><circle cx="313" cy="57" r=".55"/><circle cx="357" cy="57" r=".55"/><circle cx="85" cy="59" r=".55"/><circle cx="87" cy="59" r=".55"/><circle cx="89" cy="59" r=".55"/><circle cx="91" cy="59" r=".55"/><circle cx="93" cy="59" r=".55"/><circle cx="95" cy="59" r=".55"/><circle cx="97" cy="59" r=".55"/><circle cx="99" cy="59" r=".55"/><circle cx="257" cy="59" r=".55"/><circle cx="277" cy="59" r=".55"/><circle cx="279" cy="59" r=".55"/><circle cx="281" cy="59" r=".55"/><circle cx="283" cy="59" r=".55"/><circle cx="285" cy="59" r=".55"/><circle cx="287" cy="59" r=".55"/><circle cx="289" cy="59" r=".55"/><circle cx="291" cy="59" r=".55"/><circle cx="295" cy="59" r=".55"/><circle cx="297" cy="59" r=".55"/><circle cx="303" cy="59" r=".55"/><circle cx="305" cy="59" r=".55"/><circle cx="87" cy="61" r=".55"/><circle cx="89" cy="61" r=".55"/><circle cx="91" cy="61" r=".55"/><circle cx="97" cy="61" r=".55"/><circle cx="99" cy="61" r=".55"/><circle cx="261" cy="61" r=".55"/><circle cx="279" cy="61" r=".55"/><circle cx="281" cy="61" r=".55"/><circle cx="283" cy="61" r=".55"/><circle cx="287" cy="61" r=".55"/><circle cx="289" cy="61" r=".55"/><circle cx="291" cy="61" r=".55"/><circle cx="293" cy="61" r=".55"/><circle cx="295" cy="61" r=".55"/><circle cx="297" cy="61" r=".55"/><circle cx="3" cy="63" r=".55"/><circle cx="73" cy="63" r=".55"/><circle cx="99" cy="63" r=".55"/><circle cx="231" cy="63" r=".55"/><circle cx="271" cy="63" r=".55"/><circle cx="273" cy="63" r=".55"/><circle cx="275" cy="63" r=".55"/><circle cx="277" cy="63" r=".55"/><circle cx="279" cy="63" r=".55"/><circle cx="281" cy="63" r=".55"/><circle cx="283" cy="63" r=".55"/><circle cx="285" cy="63" r=".55"/><circle cx="287" cy="63" r=".55"/><circle cx="289" cy="63" r=".55"/><circle cx="291" cy="63" r=".55"/><circle cx="293" cy="63" r=".55"/><circle cx="295" cy="63" r=".55"/><circle cx="297" cy="63" r=".55"/><circle cx="299" cy="63" r=".55"/><circle cx="357" cy="63" r=".55"/><circle cx="73" cy="65" r=".55"/><circle cx="75" cy="65" r=".55"/><circle cx="233" cy="65" r=".55"/><circle cx="271" cy="65" r=".55"/><circle cx="273" cy="65" r=".55"/><circle cx="275" cy="65" r=".55"/><circle cx="277" cy="65" r=".55"/><circle cx="279" cy="65" r=".55"/><circle cx="281" cy="65" r=".55"/><circle cx="283" cy="65" r=".55"/><circle cx="285" cy="65" r=".55"/><circle cx="287" cy="65" r=".55"/><circle cx="289" cy="65" r=".55"/><circle cx="291" cy="65" r=".55"/><circle cx="293" cy="65" r=".55"/><circle cx="295" cy="65" r=".55"/><circle cx="297" cy="65" r=".55"/><circle cx="3" cy="67" r=".55"/><circle cx="75" cy="67" r=".55"/><circle cx="245" cy="67" r=".55"/><circle cx="247" cy="67" r=".55"/><circle cx="271" cy="67" r=".55"/><circle cx="273" cy="67" r=".55"/><circle cx="275" cy="67" r=".55"/><circle cx="277" cy="67" r=".55"/><circle cx="279" cy="67" r=".55"/><circle cx="281" cy="67" r=".55"/><circle cx="283" cy="67" r=".55"/><circle cx="285" cy="67" r=".55"/><circle cx="287" cy="67" r=".55"/><circle cx="289" cy="67" r=".55"/><circle cx="291" cy="67" r=".55"/><circle cx="293" cy="67" r=".55"/><circle cx="295" cy="67" r=".55"/><circle cx="301" cy="67" r=".55"/><circle cx="357" cy="67" r=".55"/><circle cx="77" cy="69" r=".55"/><circle cx="81" cy="69" r=".55"/><circle cx="83" cy="69" r=".55"/><circle cx="93" cy="69" r=".55"/><circle cx="249" cy="69" r=".55"/><circle cx="267" cy="69" r=".55"/><circle cx="271" cy="69" r=".55"/><circle cx="273" cy="69" r=".55"/><circle cx="277" cy="69" r=".55"/><circle cx="279" cy="69" r=".55"/><circle cx="281" cy="69" r=".55"/><circle cx="283" cy="69" r=".55"/><circle cx="285" cy="69" r=".55"/><circle cx="287" cy="69" r=".55"/><circle cx="357" cy="69" r=".55"/><circle cx="77" cy="71" r=".55"/><circle cx="79" cy="71" r=".55"/><circle cx="81" cy="71" r=".55"/><circle cx="83" cy="71" r=".55"/><circle cx="91" cy="71" r=".55"/><circle cx="93" cy="71" r=".55"/><circle cx="251" cy="71" r=".55"/><circle cx="257" cy="71" r=".55"/><circle cx="263" cy="71" r=".55"/><circle cx="273" cy="71" r=".55"/><circle cx="277" cy="71" r=".55"/><circle cx="279" cy="71" r=".55"/><circle cx="281" cy="71" r=".55"/><circle cx="283" cy="71" r=".55"/><circle cx="3" cy="73" r=".55"/><circle cx="79" cy="73" r=".55"/><circle cx="81" cy="73" r=".55"/><circle cx="83" cy="73" r=".55"/><circle cx="85" cy="73" r=".55"/><circle cx="87" cy="73" r=".55"/><circle cx="89" cy="73" r=".55"/><circle cx="91" cy="73" r=".55"/><circle cx="253" cy="73" r=".55"/><circle cx="261" cy="73" r=".55"/><circle cx="277" cy="73" r=".55"/><circle cx="279" cy="73" r=".55"/><circle cx="281" cy="73" r=".55"/><circle cx="285" cy="73" r=".55"/><circle cx="301" cy="73" r=".55"/><circle cx="357" cy="73" r=".55"/><circle cx="89" cy="75" r=".55"/><circle cx="91" cy="75" r=".55"/><circle cx="93" cy="75" r=".55"/><circle cx="95" cy="75" r=".55"/><circle cx="285" cy="75" r=".55"/><circle cx="287" cy="75" r=".55"/><circle cx="93" cy="77" r=".55"/><circle cx="95" cy="77" r=".55"/><circle cx="163" cy="77" r=".55"/><circle cx="167" cy="77" r=".55"/><circle cx="169" cy="77" r=".55"/><circle cx="217" cy="77" r=".55"/><circle cx="277" cy="77" r=".55"/><circle cx="279" cy="77" r=".55"/><circle cx="281" cy="77" r=".55"/><circle cx="283" cy="77" r=".55"/><circle cx="285" cy="77" r=".55"/><circle cx="287" cy="77" r=".55"/><circle cx="3" cy="79" r=".55"/><circle cx="95" cy="79" r=".55"/><circle cx="97" cy="79" r=".55"/><circle cx="107" cy="79" r=".55"/><circle cx="117" cy="79" r=".55"/><circle cx="119" cy="79" r=".55"/><circle cx="163" cy="79" r=".55"/><circle cx="165" cy="79" r=".55"/><circle cx="167" cy="79" r=".55"/><circle cx="169" cy="79" r=".55"/><circle cx="171" cy="79" r=".55"/><circle cx="173" cy="79" r=".55"/><circle cx="181" cy="79" r=".55"/><circle cx="183" cy="79" r=".55"/><circle cx="199" cy="79" r=".55"/><circle cx="201" cy="79" r=".55"/><circle cx="215" cy="79" r=".55"/><circle cx="217" cy="79" r=".55"/><circle cx="255" cy="79" r=".55"/><circle cx="277" cy="79" r=".55"/><circle cx="279" cy="79" r=".55"/><circle cx="283" cy="79" r=".55"/><circle cx="287" cy="79" r=".55"/><circle cx="303" cy="79" r=".55"/><circle cx="357" cy="79" r=".55"/><circle cx="3" cy="81" r=".55"/><circle cx="97" cy="81" r=".55"/><circle cx="99" cy="81" r=".55"/><circle cx="101" cy="81" r=".55"/><circle cx="103" cy="81" r=".55"/><circle cx="107" cy="81" r=".55"/><circle cx="109" cy="81" r=".55"/><circle cx="111" cy="81" r=".55"/><circle cx="113" cy="81" r=".55"/><circle cx="115" cy="81" r=".55"/><circle cx="117" cy="81" r=".55"/><circle cx="119" cy="81" r=".55"/><circle cx="167" cy="81" r=".55"/><circle cx="169" cy="81" r=".55"/><circle cx="171" cy="81" r=".55"/><circle cx="173" cy="81" r=".55"/><circle cx="175" cy="81" r=".55"/><circle cx="177" cy="81" r=".55"/><circle cx="179" cy="81" r=".55"/><circle cx="181" cy="81" r=".55"/><circle cx="183" cy="81" r=".55"/><circle cx="185" cy="81" r=".55"/><circle cx="187" cy="81" r=".55"/><circle cx="189" cy="81" r=".55"/><circle cx="191" cy="81" r=".55"/><circle cx="193" cy="81" r=".55"/><circle cx="197" cy="81" r=".55"/><circle cx="199" cy="81" r=".55"/><circle cx="201" cy="81" r=".55"/><circle cx="203" cy="81" r=".55"/><circle cx="205" cy="81" r=".55"/><circle cx="207" cy="81" r=".55"/><circle cx="213" cy="81" r=".55"/><circle cx="215" cy="81" r=".55"/><circle cx="217" cy="81" r=".55"/><circle cx="219" cy="81" r=".55"/><circle cx="279" cy="81" r=".55"/><circle cx="303" cy="81" r=".55"/><circle cx="305" cy="81" r=".55"/><circle cx="357" cy="81" r=".55"/><circle cx="3" cy="83" r=".55"/><circle cx="103" cy="83" r=".55"/><circle cx="105" cy="83" r=".55"/><circle cx="107" cy="83" r=".55"/><circle cx="109" cy="83" r=".55"/><circle cx="111" cy="83" r=".55"/><circle cx="113" cy="83" r=".55"/><circle cx="115" cy="83" r=".55"/><circle cx="117" cy="83" r=".55"/><circle cx="119" cy="83" r=".55"/><circle cx="121" cy="83" r=".55"/><circle cx="167" cy="83" r=".55"/><circle cx="169" cy="83" r=".55"/><circle cx="171" cy="83" r=".55"/><circle cx="173" cy="83" r=".55"/><circle cx="175" cy="83" r=".55"/><circle cx="177" cy="83" r=".55"/><circle cx="179" cy="83" r=".55"/><circle cx="181" cy="83" r=".55"/><circle cx="185" cy="83" r=".55"/><circle cx="187" cy="83" r=".55"/><circle cx="189" cy="83" r=".55"/><circle cx="191" cy="83" r=".55"/><circle cx="193" cy="83" r=".55"/><circle cx="195" cy="83" r=".55"/><circle cx="197" cy="83" r=".55"/><circle cx="199" cy="83" r=".55"/><circle cx="201" cy="83" r=".55"/><circle cx="203" cy="83" r=".55"/><circle cx="205" cy="83" r=".55"/><circle cx="207" cy="83" r=".55"/><circle cx="209" cy="83" r=".55"/><circle cx="211" cy="83" r=".55"/><circle cx="213" cy="83" r=".55"/><circle cx="215" cy="83" r=".55"/><circle cx="217" cy="83" r=".55"/><circle cx="219" cy="83" r=".55"/><circle cx="259" cy="83" r=".55"/><circle cx="261" cy="83" r=".55"/><circle cx="279" cy="83" r=".55"/><circle cx="303" cy="83" r=".55"/><circle cx="305" cy="83" r=".55"/><circle cx="357" cy="83" r=".55"/><circle cx="3" cy="85" r=".55"/><circle cx="103" cy="85" r=".55"/><circle cx="105" cy="85" r=".55"/><circle cx="107" cy="85" r=".55"/><circle cx="109" cy="85" r=".55"/><circle cx="111" cy="85" r=".55"/><circle cx="113" cy="85" r=".55"/><circle cx="115" cy="85" r=".55"/><circle cx="117" cy="85" r=".55"/><circle cx="119" cy="85" r=".55"/><circle cx="121" cy="85" r=".55"/><circle cx="123" cy="85" r=".55"/><circle cx="125" cy="85" r=".55"/><circle cx="127" cy="85" r=".55"/><circle cx="129" cy="85" r=".55"/><circle cx="171" cy="85" r=".55"/><circle cx="173" cy="85" r=".55"/><circle cx="175" cy="85" r=".55"/><circle cx="177" cy="85" r=".55"/><circle cx="179" cy="85" r=".55"/><circle cx="185" cy="85" r=".55"/><circle cx="187" cy="85" r=".55"/><circle cx="189" cy="85" r=".55"/><circle cx="191" cy="85" r=".55"/><circle cx="193" cy="85" r=".55"/><circle cx="195" cy="85" r=".55"/><circle cx="197" cy="85" r=".55"/><circle cx="199" cy="85" r=".55"/><circle cx="201" cy="85" r=".55"/><circle cx="203" cy="85" r=".55"/><circle cx="205" cy="85" r=".55"/><circle cx="207" cy="85" r=".55"/><circle cx="209" cy="85" r=".55"/><circle cx="211" cy="85" r=".55"/><circle cx="275" cy="85" r=".55"/><circle cx="277" cy="85" r=".55"/><circle cx="281" cy="85" r=".55"/><circle cx="295" cy="85" r=".55"/><circle cx="297" cy="85" r=".55"/><circle cx="357" cy="85" r=".55"/><circle cx="103" cy="87" r=".55"/><circle cx="105" cy="87" r=".55"/><circle cx="107" cy="87" r=".55"/><circle cx="109" cy="87" r=".55"/><circle cx="111" cy="87" r=".55"/><circle cx="113" cy="87" r=".55"/><circle cx="115" cy="87" r=".55"/><circle cx="117" cy="87" r=".55"/><circle cx="119" cy="87" r=".55"/><circle cx="121" cy="87" r=".55"/><circle cx="123" cy="87" r=".55"/><circle cx="125" cy="87" r=".55"/><circle cx="127" cy="87" r=".55"/><circle cx="129" cy="87" r=".55"/><circle cx="189" cy="87" r=".55"/><circle cx="191" cy="87" r=".55"/><circle cx="193" cy="87" r=".55"/><circle cx="195" cy="87" r=".55"/><circle cx="197" cy="87" r=".55"/><circle cx="199" cy="87" r=".55"/><circle cx="201" cy="87" r=".55"/><circle cx="203" cy="87" r=".55"/><circle cx="205" cy="87" r=".55"/><circle cx="207" cy="87" r=".55"/><circle cx="209" cy="87" r=".55"/><circle cx="211" cy="87" r=".55"/><circle cx="213" cy="87" r=".55"/><circle cx="277" cy="87" r=".55"/><circle cx="279" cy="87" r=".55"/><circle cx="281" cy="87" r=".55"/><circle cx="283" cy="87" r=".55"/><circle cx="291" cy="87" r=".55"/><circle cx="293" cy="87" r=".55"/><circle cx="295" cy="87" r=".55"/><circle cx="297" cy="87" r=".55"/><circle cx="3" cy="89" r=".55"/><circle cx="101" cy="89" r=".55"/><circle cx="103" cy="89" r=".55"/><circle cx="105" cy="89" r=".55"/><circle cx="107" cy="89" r=".55"/><circle cx="109" cy="89" r=".55"/><circle cx="111" cy="89" r=".55"/><circle cx="113" cy="89" r=".55"/><circle cx="115" cy="89" r=".55"/><circle cx="117" cy="89" r=".55"/><circle cx="119" cy="89" r=".55"/><circle cx="121" cy="89" r=".55"/><circle cx="123" cy="89" r=".55"/><circle cx="125" cy="89" r=".55"/><circle cx="127" cy="89" r=".55"/><circle cx="129" cy="89" r=".55"/><circle cx="189" cy="89" r=".55"/><circle cx="191" cy="89" r=".55"/><circle cx="193" cy="89" r=".55"/><circle cx="195" cy="89" r=".55"/><circle cx="197" cy="89" r=".55"/><circle cx="199" cy="89" r=".55"/><circle cx="201" cy="89" r=".55"/><circle cx="203" cy="89" r=".55"/><circle cx="205" cy="89" r=".55"/><circle cx="207" cy="89" r=".55"/><circle cx="209" cy="89" r=".55"/><circle cx="211" cy="89" r=".55"/><circle cx="213" cy="89" r=".55"/><circle cx="215" cy="89" r=".55"/><circle cx="223" cy="89" r=".55"/><circle cx="279" cy="89" r=".55"/><circle cx="281" cy="89" r=".55"/><circle cx="283" cy="89" r=".55"/><circle cx="289" cy="89" r=".55"/><circle cx="291" cy="89" r=".55"/><circle cx="293" cy="89" r=".55"/><circle cx="295" cy="89" r=".55"/><circle cx="297" cy="89" r=".55"/><circle cx="301" cy="89" r=".55"/><circle cx="303" cy="89" r=".55"/><circle cx="307" cy="89" r=".55"/><circle cx="357" cy="89" r=".55"/><circle cx="3" cy="91" r=".55"/><circle cx="101" cy="91" r=".55"/><circle cx="103" cy="91" r=".55"/><circle cx="105" cy="91" r=".55"/><circle cx="107" cy="91" r=".55"/><circle cx="109" cy="91" r=".55"/><circle cx="111" cy="91" r=".55"/><circle cx="113" cy="91" r=".55"/><circle cx="115" cy="91" r=".55"/><circle cx="117" cy="91" r=".55"/><circle cx="119" cy="91" r=".55"/><circle cx="121" cy="91" r=".55"/><circle cx="123" cy="91" r=".55"/><circle cx="125" cy="91" r=".55"/><circle cx="127" cy="91" r=".55"/><circle cx="129" cy="91" r=".55"/><circle cx="131" cy="91" r=".55"/><circle cx="133" cy="91" r=".55"/><circle cx="189" cy="91" r=".55"/><circle cx="191" cy="91" r=".55"/><circle cx="193" cy="91" r=".55"/><circle cx="195" cy="91" r=".55"/><circle cx="197" cy="91" r=".55"/><circle cx="199" cy="91" r=".55"/><circle cx="201" cy="91" r=".55"/><circle cx="203" cy="91" r=".55"/><circle cx="205" cy="91" r=".55"/><circle cx="207" cy="91" r=".55"/><circle cx="209" cy="91" r=".55"/><circle cx="211" cy="91" r=".55"/><circle cx="213" cy="91" r=".55"/><circle cx="279" cy="91" r=".55"/><circle cx="281" cy="91" r=".55"/><circle cx="283" cy="91" r=".55"/><circle cx="289" cy="91" r=".55"/><circle cx="291" cy="91" r=".55"/><circle cx="293" cy="91" r=".55"/><circle cx="295" cy="91" r=".55"/><circle cx="297" cy="91" r=".55"/><circle cx="299" cy="91" r=".55"/><circle cx="301" cy="91" r=".55"/><circle cx="311" cy="91" r=".55"/><circle cx="313" cy="91" r=".55"/><circle cx="317" cy="91" r=".55"/><circle cx="357" cy="91" r=".55"/><circle cx="101" cy="93" r=".55"/><circle cx="103" cy="93" r=".55"/><circle cx="105" cy="93" r=".55"/><circle cx="107" cy="93" r=".55"/><circle cx="109" cy="93" r=".55"/><circle cx="111" cy="93" r=".55"/><circle cx="113" cy="93" r=".55"/><circle cx="115" cy="93" r=".55"/><circle cx="117" cy="93" r=".55"/><circle cx="119" cy="93" r=".55"/><circle cx="121" cy="93" r=".55"/><circle cx="123" cy="93" r=".55"/><circle cx="125" cy="93" r=".55"/><circle cx="127" cy="93" r=".55"/><circle cx="129" cy="93" r=".55"/><circle cx="131" cy="93" r=".55"/><circle cx="133" cy="93" r=".55"/><circle cx="135" cy="93" r=".55"/><circle cx="137" cy="93" r=".55"/><circle cx="191" cy="93" r=".55"/><circle cx="193" cy="93" r=".55"/><circle cx="197" cy="93" r=".55"/><circle cx="199" cy="93" r=".55"/><circle cx="201" cy="93" r=".55"/><circle cx="203" cy="93" r=".55"/><circle cx="205" cy="93" r=".55"/><circle cx="207" cy="93" r=".55"/><circle cx="209" cy="93" r=".55"/><circle cx="211" cy="93" r=".55"/><circle cx="281" cy="93" r=".55"/><circle cx="283" cy="93" r=".55"/><circle cx="285" cy="93" r=".55"/><circle cx="291" cy="93" r=".55"/><circle cx="293" cy="93" r=".55"/><circle cx="295" cy="93" r=".55"/><circle cx="299" cy="93" r=".55"/><circle cx="301" cy="93" r=".55"/><circle cx="311" cy="93" r=".55"/><circle cx="313" cy="93" r=".55"/><circle cx="315" cy="93" r=".55"/><circle cx="317" cy="93" r=".55"/><circle cx="319" cy="93" r=".55"/><circle cx="321" cy="93" r=".55"/><circle cx="3" cy="95" r=".55"/><circle cx="101" cy="95" r=".55"/><circle cx="103" cy="95" r=".55"/><circle cx="105" cy="95" r=".55"/><circle cx="107" cy="95" r=".55"/><circle cx="109" cy="95" r=".55"/><circle cx="111" cy="95" r=".55"/><circle cx="113" cy="95" r=".55"/><circle cx="115" cy="95" r=".55"/><circle cx="117" cy="95" r=".55"/><circle cx="119" cy="95" r=".55"/><circle cx="121" cy="95" r=".55"/><circle cx="123" cy="95" r=".55"/><circle cx="125" cy="95" r=".55"/><circle cx="127" cy="95" r=".55"/><circle cx="129" cy="95" r=".55"/><circle cx="131" cy="95" r=".55"/><circle cx="133" cy="95" r=".55"/><circle cx="135" cy="95" r=".55"/><circle cx="137" cy="95" r=".55"/><circle cx="139" cy="95" r=".55"/><circle cx="191" cy="95" r=".55"/><circle cx="193" cy="95" r=".55"/><circle cx="195" cy="95" r=".55"/><circle cx="197" cy="95" r=".55"/><circle cx="199" cy="95" r=".55"/><circle cx="201" cy="95" r=".55"/><circle cx="203" cy="95" r=".55"/><circle cx="205" cy="95" r=".55"/><circle cx="207" cy="95" r=".55"/><circle cx="209" cy="95" r=".55"/><circle cx="211" cy="95" r=".55"/><circle cx="283" cy="95" r=".55"/><circle cx="315" cy="95" r=".55"/><circle cx="317" cy="95" r=".55"/><circle cx="319" cy="95" r=".55"/><circle cx="321" cy="95" r=".55"/><circle cx="323" cy="95" r=".55"/><circle cx="325" cy="95" r=".55"/><circle cx="331" cy="95" r=".55"/><circle cx="357" cy="95" r=".55"/><circle cx="103" cy="97" r=".55"/><circle cx="105" cy="97" r=".55"/><circle cx="107" cy="97" r=".55"/><circle cx="109" cy="97" r=".55"/><circle cx="111" cy="97" r=".55"/><circle cx="113" cy="97" r=".55"/><circle cx="115" cy="97" r=".55"/><circle cx="117" cy="97" r=".55"/><circle cx="119" cy="97" r=".55"/><circle cx="121" cy="97" r=".55"/><circle cx="123" cy="97" r=".55"/><circle cx="125" cy="97" r=".55"/><circle cx="127" cy="97" r=".55"/><circle cx="129" cy="97" r=".55"/><circle cx="131" cy="97" r=".55"/><circle cx="133" cy="97" r=".55"/><circle cx="135" cy="97" r=".55"/><circle cx="137" cy="97" r=".55"/><circle cx="139" cy="97" r=".55"/><circle cx="193" cy="97" r=".55"/><circle cx="195" cy="97" r=".55"/><circle cx="197" cy="97" r=".55"/><circle cx="199" cy="97" r=".55"/><circle cx="201" cy="97" r=".55"/><circle cx="203" cy="97" r=".55"/><circle cx="205" cy="97" r=".55"/><circle cx="207" cy="97" r=".55"/><circle cx="209" cy="97" r=".55"/><circle cx="211" cy="97" r=".55"/><circle cx="213" cy="97" r=".55"/><circle cx="217" cy="97" r=".55"/><circle cx="219" cy="97" r=".55"/><circle cx="287" cy="97" r=".55"/><circle cx="289" cy="97" r=".55"/><circle cx="291" cy="97" r=".55"/><circle cx="317" cy="97" r=".55"/><circle cx="319" cy="97" r=".55"/><circle cx="321" cy="97" r=".55"/><circle cx="323" cy="97" r=".55"/><circle cx="325" cy="97" r=".55"/><circle cx="327" cy="97" r=".55"/><circle cx="103" cy="99" r=".55"/><circle cx="105" cy="99" r=".55"/><circle cx="107" cy="99" r=".55"/><circle cx="109" cy="99" r=".55"/><circle cx="111" cy="99" r=".55"/><circle cx="113" cy="99" r=".55"/><circle cx="115" cy="99" r=".55"/><circle cx="117" cy="99" r=".55"/><circle cx="119" cy="99" r=".55"/><circle cx="121" cy="99" r=".55"/><circle cx="123" cy="99" r=".55"/><circle cx="125" cy="99" r=".55"/><circle cx="127" cy="99" r=".55"/><circle cx="129" cy="99" r=".55"/><circle cx="131" cy="99" r=".55"/><circle cx="133" cy="99" r=".55"/><circle cx="137" cy="99" r=".55"/><circle cx="195" cy="99" r=".55"/><circle cx="197" cy="99" r=".55"/><circle cx="199" cy="99" r=".55"/><circle cx="201" cy="99" r=".55"/><circle cx="203" cy="99" r=".55"/><circle cx="205" cy="99" r=".55"/><circle cx="207" cy="99" r=".55"/><circle cx="209" cy="99" r=".55"/><circle cx="211" cy="99" r=".55"/><circle cx="213" cy="99" r=".55"/><circle cx="215" cy="99" r=".55"/><circle cx="217" cy="99" r=".55"/><circle cx="219" cy="99" r=".55"/><circle cx="327" cy="99" r=".55"/><circle cx="105" cy="101" r=".55"/><circle cx="107" cy="101" r=".55"/><circle cx="109" cy="101" r=".55"/><circle cx="111" cy="101" r=".55"/><circle cx="113" cy="101" r=".55"/><circle cx="115" cy="101" r=".55"/><circle cx="117" cy="101" r=".55"/><circle cx="119" cy="101" r=".55"/><circle cx="121" cy="101" r=".55"/><circle cx="123" cy="101" r=".55"/><circle cx="125" cy="101" r=".55"/><circle cx="127" cy="101" r=".55"/><circle cx="129" cy="101" r=".55"/><circle cx="131" cy="101" r=".55"/><circle cx="133" cy="101" r=".55"/><circle cx="137" cy="101" r=".55"/><circle cx="139" cy="101" r=".55"/><circle cx="195" cy="101" r=".55"/><circle cx="197" cy="101" r=".55"/><circle cx="199" cy="101" r=".55"/><circle cx="201" cy="101" r=".55"/><circle cx="203" cy="101" r=".55"/><circle cx="205" cy="101" r=".55"/><circle cx="207" cy="101" r=".55"/><circle cx="209" cy="101" r=".55"/><circle cx="211" cy="101" r=".55"/><circle cx="213" cy="101" r=".55"/><circle cx="215" cy="101" r=".55"/><circle cx="217" cy="101" r=".55"/><circle cx="219" cy="101" r=".55"/><circle cx="107" cy="103" r=".55"/><circle cx="109" cy="103" r=".55"/><circle cx="111" cy="103" r=".55"/><circle cx="113" cy="103" r=".55"/><circle cx="115" cy="103" r=".55"/><circle cx="117" cy="103" r=".55"/><circle cx="119" cy="103" r=".55"/><circle cx="121" cy="103" r=".55"/><circle cx="123" cy="103" r=".55"/><circle cx="125" cy="103" r=".55"/><circle cx="127" cy="103" r=".55"/><circle cx="129" cy="103" r=".55"/><circle cx="131" cy="103" r=".55"/><circle cx="133" cy="103" r=".55"/><circle cx="137" cy="103" r=".55"/><circle cx="139" cy="103" r=".55"/><circle cx="141" cy="103" r=".55"/><circle cx="197" cy="103" r=".55"/><circle cx="199" cy="103" r=".55"/><circle cx="201" cy="103" r=".55"/><circle cx="203" cy="103" r=".55"/><circle cx="205" cy="103" r=".55"/><circle cx="207" cy="103" r=".55"/><circle cx="209" cy="103" r=".55"/><circle cx="211" cy="103" r=".55"/><circle cx="213" cy="103" r=".55"/><circle cx="215" cy="103" r=".55"/><circle cx="217" cy="103" r=".55"/><circle cx="219" cy="103" r=".55"/><circle cx="229" cy="103" r=".55"/><circle cx="309" cy="103" r=".55"/><circle cx="311" cy="103" r=".55"/><circle cx="321" cy="103" r=".55"/><circle cx="113" cy="105" r=".55"/><circle cx="115" cy="105" r=".55"/><circle cx="117" cy="105" r=".55"/><circle cx="119" cy="105" r=".55"/><circle cx="129" cy="105" r=".55"/><circle cx="139" cy="105" r=".55"/><circle cx="205" cy="105" r=".55"/><circle cx="213" cy="105" r=".55"/><circle cx="217" cy="105" r=".55"/><circle cx="229" cy="105" r=".55"/><circle cx="115" cy="107" r=".55"/><circle cx="117" cy="107" r=".55"/><circle cx="119" cy="107" r=".55"/><circle cx="121" cy="107" r=".55"/><circle cx="123" cy="107" r=".55"/><circle cx="125" cy="107" r=".55"/><circle cx="127" cy="107" r=".55"/><circle cx="129" cy="107" r=".55"/><circle cx="131" cy="107" r=".55"/><circle cx="133" cy="107" r=".55"/><circle cx="137" cy="107" r=".55"/><circle cx="139" cy="107" r=".55"/><circle cx="205" cy="107" r=".55"/><circle cx="207" cy="107" r=".55"/><circle cx="213" cy="107" r=".55"/><circle cx="215" cy="107" r=".55"/><circle cx="217" cy="107" r=".55"/><circle cx="227" cy="107" r=".55"/><circle cx="229" cy="107" r=".55"/><circle cx="357" cy="107" r=".55"/><circle cx="117" cy="109" r=".55"/><circle cx="119" cy="109" r=".55"/><circle cx="121" cy="109" r=".55"/><circle cx="123" cy="109" r=".55"/><circle cx="125" cy="109" r=".55"/><circle cx="133" cy="109" r=".55"/><circle cx="137" cy="109" r=".55"/><circle cx="139" cy="109" r=".55"/><circle cx="213" cy="109" r=".55"/><circle cx="215" cy="109" r=".55"/><circle cx="227" cy="109" r=".55"/><circle cx="229" cy="109" r=".55"/><circle cx="357" cy="109" r=".55"/><circle cx="117" cy="111" r=".55"/><circle cx="119" cy="111" r=".55"/><circle cx="121" cy="111" r=".55"/><circle cx="123" cy="111" r=".55"/><circle cx="133" cy="111" r=".55"/><circle cx="137" cy="111" r=".55"/><circle cx="139" cy="111" r=".55"/><circle cx="213" cy="111" r=".55"/><circle cx="227" cy="111" r=".55"/><circle cx="3" cy="113" r=".55"/><circle cx="117" cy="113" r=".55"/><circle cx="119" cy="113" r=".55"/><circle cx="121" cy="113" r=".55"/><circle cx="123" cy="113" r=".55"/><circle cx="129" cy="113" r=".55"/><circle cx="131" cy="113" r=".55"/><circle cx="133" cy="113" r=".55"/><circle cx="135" cy="113" r=".55"/><circle cx="193" cy="113" r=".55"/><circle cx="213" cy="113" r=".55"/><circle cx="227" cy="113" r=".55"/><circle cx="357" cy="113" r=".55"/><circle cx="115" cy="115" r=".55"/><circle cx="117" cy="115" r=".55"/><circle cx="119" cy="115" r=".55"/><circle cx="123" cy="115" r=".55"/><circle cx="125" cy="115" r=".55"/><circle cx="127" cy="115" r=".55"/><circle cx="129" cy="115" r=".55"/><circle cx="131" cy="115" r=".55"/><circle cx="133" cy="115" r=".55"/><circle cx="207" cy="115" r=".55"/><circle cx="331" cy="115" r=".55"/><circle cx="357" cy="115" r=".55"/><circle cx="3" cy="117" r=".55"/><circle cx="117" cy="117" r=".55"/><circle cx="119" cy="117" r=".55"/><circle cx="123" cy="117" r=".55"/><circle cx="125" cy="117" r=".55"/><circle cx="127" cy="117" r=".55"/><circle cx="129" cy="117" r=".55"/><circle cx="131" cy="117" r=".55"/><circle cx="211" cy="117" r=".55"/><circle cx="331" cy="117" r=".55"/><circle cx="357" cy="117" r=".55"/><circle cx="127" cy="119" r=".55"/><circle cx="129" cy="119" r=".55"/><circle cx="331" cy="119" r=".55"/><circle cx="129" cy="121" r=".55"/><circle cx="197" cy="121" r=".55"/><circle cx="331" cy="121" r=".55"/><circle cx="3" cy="123" r=".55"/><circle cx="119" cy="123" r=".55"/><circle cx="127" cy="123" r=".55"/><circle cx="129" cy="123" r=".55"/><circle cx="207" cy="123" r=".55"/><circle cx="295" cy="123" r=".55"/><circle cx="329" cy="123" r=".55"/><circle cx="331" cy="123" r=".55"/><circle cx="357" cy="123" r=".55"/><circle cx="109" cy="125" r=".55"/><circle cx="123" cy="125" r=".55"/><circle cx="125" cy="125" r=".55"/><circle cx="127" cy="125" r=".55"/><circle cx="203" cy="125" r=".55"/><circle cx="353" cy="125" r=".55"/><circle cx="3" cy="127" r=".55"/><circle cx="107" cy="127" r=".55"/><circle cx="109" cy="127" r=".55"/><circle cx="123" cy="127" r=".55"/><circle cx="125" cy="127" r=".55"/><circle cx="325" cy="127" r=".55"/><circle cx="327" cy="127" r=".55"/><circle cx="355" cy="127" r=".55"/><circle cx="357" cy="127" r=".55"/><circle cx="3" cy="129" r=".55"/><circle cx="107" cy="129" r=".55"/><circle cx="109" cy="129" r=".55"/><circle cx="123" cy="129" r=".55"/><circle cx="353" cy="129" r=".55"/><circle cx="355" cy="129" r=".55"/><circle cx="357" cy="129" r=".55"/><circle cx="3" cy="131" r=".55"/><circle cx="107" cy="131" r=".55"/><circle cx="109" cy="131" r=".55"/><circle cx="117" cy="131" r=".55"/><circle cx="119" cy="131" r=".55"/><circle cx="325" cy="131" r=".55"/><circle cx="327" cy="131" r=".55"/><circle cx="351" cy="131" r=".55"/><circle cx="353" cy="131" r=".55"/><circle cx="107" cy="133" r=".55"/><circle cx="109" cy="133" r=".55"/><circle cx="117" cy="133" r=".55"/><circle cx="325" cy="133" r=".55"/><circle cx="349" cy="133" r=".55"/><circle cx="107" cy="135" r=".55"/><circle cx="347" cy="135" r=".55"/><circle cx="3" cy="137" r=".55"/><circle cx="105" cy="137" r=".55"/><circle cx="117" cy="137" r=".55"/><circle cx="357" cy="137" r=".55"/><circle cx="105" cy="139" r=".55"/><circle cx="107" cy="141" r=".55"/><circle cx="109" cy="141" r=".55"/><circle cx="115" cy="141" r=".55"/><circle cx="357" cy="141" r=".55"/><circle cx="3" cy="143" r=".55"/><circle cx="107" cy="143" r=".55"/><circle cx="109" cy="143" r=".55"/><circle cx="111" cy="143" r=".55"/><circle cx="113" cy="143" r=".55"/><circle cx="115" cy="143" r=".55"/><circle cx="357" cy="143" r=".55"/><circle cx="111" cy="145" r=".55"/><circle cx="113" cy="145" r=".55"/><circle cx="3" cy="147" r=".55"/><circle cx="357" cy="147" r=".55"/><circle cx="3" cy="153" r=".55"/><circle cx="357" cy="153" r=".55"/><circle cx="3" cy="155" r=".55"/><circle cx="243" cy="155" r=".55"/><circle cx="245" cy="155" r=".55"/><circle cx="247" cy="155" r=".55"/><circle cx="249" cy="155" r=".55"/><circle cx="259" cy="155" r=".55"/><circle cx="331" cy="155" r=".55"/><circle cx="357" cy="155" r=".55"/><circle cx="3" cy="157" r=".55"/><circle cx="179" cy="157" r=".55"/><circle cx="181" cy="157" r=".55"/><circle cx="183" cy="157" r=".55"/><circle cx="185" cy="157" r=".55"/><circle cx="187" cy="157" r=".55"/><circle cx="189" cy="157" r=".55"/><circle cx="191" cy="157" r=".55"/><circle cx="199" cy="157" r=".55"/><circle cx="201" cy="157" r=".55"/><circle cx="207" cy="157" r=".55"/><circle cx="341" cy="157" r=".55"/><circle cx="357" cy="157" r=".55"/></g>
+        <g class="cities-layer"><g class="city" transform="translate(179.9,38.5)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="8.0" class="label">London</text></g><g class="city" transform="translate(182.4,41.1)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="8.0" class="label">Paris</text></g><g class="city" transform="translate(188.7,39.9)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="8.0" class="label">Frankfurt</text></g><g class="city" transform="translate(193.4,37.5)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="8.0" class="label">Berlin</text></g><g class="city" transform="translate(191.6,41.9)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="8.0" class="label">Munich</text></g><g class="city" transform="translate(172.4,56.4)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="8.0" class="label">Casablanca</text></g><g class="city" transform="translate(198.4,123.9)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Cape Town</text></g><g class="city" transform="translate(208.0,116.2)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Johannesburg</text></g><g class="city" transform="translate(207.5,119.3)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Lesotho</text></g><g class="city" transform="translate(128.8,120.0)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Porto Alegre</text></g><g class="city" transform="translate(257.2,61.4)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Delhi</text></g><g class="city" transform="translate(252.9,70.9)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Mumbai</text></g><g class="city" transform="translate(257.6,77.0)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Bangalore</text></g><g class="city" transform="translate(280.5,76.2)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Bangkok</text></g><g class="city" transform="translate(286.7,79.2)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Ho Chi Minh City</text></g><g class="city" transform="translate(281.7,86.9)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Kuala Lumpur</text></g><g class="city" transform="translate(283.7,88.5)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Johor Baru</text></g><g class="city" transform="translate(283.8,88.6)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Singapore</text></g><g class="city" transform="translate(286.9,96.2)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Jakarta</text></g><g class="city" transform="translate(294.2,67.7)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Hong Kong</text></g><g class="city" transform="translate(301.0,75.4)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Manila</text></g><g class="city" transform="translate(301.5,65.0)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="-4.0" class="label">Taipei</text></g><g class="city" transform="translate(315.5,55.3)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="8.0" class="label">Osaka</text></g><g class="city" transform="translate(319.7,54.3)"><circle r="6" fill="transparent"/><circle r="1.6" class="dot"/><text y="8.0" class="label">Tokyo</text></g></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── SERVICES ─────────────────────── -->
+<section class="section practice" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">What I do</div>
+      <h2>I work with professionals who need to deliver <em>high-stakes presentations</em> with clarity and authority.</h2>
+    </div>
+    <div class="practice-body">
+      <p class="lede">Together we:</p>
+      <ol class="activities">
+        <li>Simplify complex ideas</li>
+        <li>Build persuasive narrative structure</li>
+        <li>Strengthen executive presence</li>
+        <li>Refine delivery and language</li>
+        <li>Prepare for critical meetings</li>
+      </ol>
+      <div class="closing">
+        This is not presentation &ldquo;tips.&rdquo;
+        <strong>It&rsquo;s strategic communication coaching.</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── WHY ─────────────────────── -->
+<section class="section why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Why me</div>
+      <h2>Complex ideas don't sell themselves. <em>They need a translator</em>, and someone to coach the human who's about to deliver them.</h2>
+    </div>
+    <div class="grid">
+      <blockquote class="lede">
+        <p>&ldquo;I have a rule that I will only rehearse once on the day before the demo, to make sure the spontaneity is there.&rdquo;</p>
+        <cite>Ian Kimbell, in <span>CIO Magazine</span>, 2009</cite>
+      </blockquote>
+      <div class="body placeholder">
+        <p>For more than thirty-five years I've worked inside the world's technology companies, helping them turn what they know into what their audiences hear. Most recently at SAP, where I became one of the people the company put on its biggest stages: Sapphire, TechEd, regional kick-offs, customer summits. Audiences of ten thousand were a regular part of the calendar.</p>
+        <p>What I learned in those rooms is that <strong>the talk people remember is almost never the most polished one</strong>. It's the one whose author had a complex idea and knew how to translate it into something the room could hear, trust, and act on. The craft, the slides, the rehearsal: those are in service of that.</p>
+        <p>Now I work with a small number of <strong>technology leaders, sales teams, and experts</strong> at a time. The people whose ideas are most worth landing and most often lost in translation. I take engagements worldwide. If you're one of them, get in touch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── PRESS (featured in) ─────────────────────── -->
+<section class="press" aria-label="Featured in">
+  <div class="wrap">
+    <div class="press-head">Featured in</div>
+    <ul class="press-logos">
+      <li><a href="https://www.cio.com/article/278462/enterprise-software-one-on-one-with-sap-demo-boy-ian-kimbell.html" target="_blank" rel="noopener">CIO Magazine</a></li>
+      <li><a href="https://www.sap-press.com/discover-sap_2178/authors/" target="_blank" rel="noopener">SAP Press</a></li>
+      <li><a href="https://www.dummies.com/author/ian-kimbell-10151/" target="_blank" rel="noopener">Wiley <em>For Dummies</em></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─────────────────────── TESTIMONIALS ─────────────────────── -->
+<section class="section" id="kind-words">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">What clients say</div>
+      <h2>From the people Ian has worked with.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <p class="q">Ian transformed how I structure executive presentations.</p>
+        <p class="q-body">His ability to simplify complex thinking and build clear narrative flow completely changed how I communicate at board level.</p>
+        <div class="by"><strong>Senior Leader</strong>Global Technology Company</div>
+      </div>
+      <div class="quote">
+        <p class="q">Game-changing for our presales team.</p>
+        <p class="q-body">The frameworks Ian introduced elevated the clarity and impact of our demos. We now present with far more confidence and authority.</p>
+        <div class="by"><strong>Head of Sales Engineering</strong></div>
+      </div>
+      <div class="quote">
+        <p class="q">Direct, structured, and highly effective.</p>
+        <p class="q-body">Ian doesn&rsquo;t just polish slides; he reshapes how you think about communication. The difference in outcome was measurable.</p>
+        <div class="by"><strong>Founder &amp; CEO</strong></div>
+      </div>
+      <div class="quote">
+        <p class="q">You have a talent.</p>
+        <p class="q-body">Ian has a rare ability to sharpen complex ideas and elevate delivery under pressure. Working with him noticeably improved the clarity and impact of our high-profile presentations.</p>
+        <div class="by"><strong>Senior Producer</strong>International Live Events</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── ABOUT ─────────────────────── -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">About</div>
+      <h2>The short version of a thirty-year career.</h2>
+    </div>
+    <div class="grid">
+      <div class="stack">
+        <div class="item">
+          <span class="yr">Now</span>
+          <span class="what placeholder">Independent practice<span>Selective engagements worldwide</span></span>
+        </div>
+        <div class="item">
+          <span class="yr">35+ yrs</span>
+          <span class="what placeholder">Inside the world's technology companies<span>Most recently at SAP. Story craft at enterprise scale</span></span>
+        </div>
+        <div class="item">
+          <span class="yr">Stages</span>
+          <span class="what placeholder">Sapphire, TechEd, customer keynotes<span>10,000+ regularly in the room</span></span>
+        </div>
+        <div class="item">
+          <span class="yr">Working</span>
+          <span class="what placeholder">English &amp; German &middot; globally<span>Engagements taken in Europe, North America, and Asia-Pacific</span></span>
+        </div>
+      </div>
+      <div class="body placeholder">
+        <p>I joined SAP in 1998 after eleven years at DuPont, and spent the next twenty-eight years there: in marketing, in the Chairman's office, and on the stages SAP put me on at Sapphire keynotes from Berlin 2000 onward. Along the way I co-authored two books on SAP (<em>Discover SAP</em>, with Nancy Muir, and <em>mySAP ERP For Dummies</em>) and quietly built a reputation for landing complex ideas at the speed of a live audience.</p>
+        <p>I'm British and German-trained (a BA Hons in European Business plus a <em>Diplom Betriebswirt</em>), and have lived and worked between the two countries since 1987. Now I take engagements independently and worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── CONTACT ─────────────────────── -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-tag">Get in touch</div>
+      <h2>Have a complex story to tell, or a team that does? <em>Let's have a conversation.</em></h2>
+    </div>
+    <div class="grid">
+      <div class="body">
+        <p class="placeholder">
+          The best engagements start with a short call: thirty minutes, no slides, just enough to figure out
+          whether what I do is what you need. If it is, we plan the work from there. If it isn't, I'll point you to
+          someone who's the right fit.
+        </p>
+        <a href="mailto:info@iankimbell.com" class="btn">Email Ian</a>
+      </div>
+      <div class="channels">
+        <a href="mailto:info@iankimbell.com" class="placeholder">info@iankimbell.com <span>Email</span></a>
+        <a href="https://www.linkedin.com/in/iankimbell/" target="_blank" rel="noopener" class="placeholder">LinkedIn <span>Professional</span></a>
+        <a href="https://github.com/IJKMan" class="placeholder">github.com/IJKMan <span>Code</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="brand-col">
+        <a href="#top" class="wordmark">Ian Kimbell<span>.</span></a>
+        <p>Helping technology leaders, sales teams, and experts turn complex ideas into stories that win attention, trust, and action.</p>
+      </div>
+      <div class="col">
+        <h4>What I do</h4>
+        <ul>
+          <li><a href="#services">Narrative structure</a></li>
+          <li><a href="#services">Executive presence</a></li>
+          <li><a href="#services">Delivery &amp; language</a></li>
+          <li><a href="#services">High-stakes meetings</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#about">Background</a></li>
+          <li><a href="#kind-words">Kind words</a></li>
+          <li><a href="#services">Why me</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:info@iankimbell.com">info@iankimbell.com</a></li>
+          <li><a href="https://www.linkedin.com/in/iankimbell/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#contact">Send a note</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Ian Kimbell &middot; All rights reserved.</span>
+      <span class="legal-links">
+        <a href="./impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+      </span>
+      <span>Working worldwide</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
