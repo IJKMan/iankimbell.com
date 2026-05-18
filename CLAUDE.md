@@ -289,60 +289,71 @@ you start a session in this directory. You don't have to ask. The
 first thing Claude does on launch is load CLAUDE.md, which means it
 already knows the site, the design rules, and the conventions.
 
-### First-time setup (Windows)
+### First-time setup (Claude.ai web Code)
 
-Claude Code expects a Unix-style shell to run from. Windows doesn't
-ship with one, so we install **Git for Windows**, which bundles
-`git` plus a bash terminal called **Git Bash**. Everything below
-runs in Git Bash (not Command Prompt, not PowerShell).
+This is the recommended path for Ian. Everything runs in the
+browser. No software to install, no terminal to learn, no API
+keys. You'll need a Claude Pro or Max subscription.
 
-1. **Install Git for Windows**: https://git-scm.com/download/win
-   Take the defaults during the installer. This gives you `git`
-   plus the **Git Bash** terminal you'll use from here on.
+1. **Sign in to Claude.ai**: https://claude.ai
+   Use the account that has your Claude Pro/Max subscription.
 
-2. **Install Node.js (LTS version)**: https://nodejs.org/en/download
-   Claude Code is distributed through npm, which comes with Node.
+2. **Open the Code section** in the Claude.ai app sidebar.
 
-3. **Open Git Bash** (Start menu → Git Bash).
+3. **Connect your GitHub account** (one-time):
+   - Claude.ai will walk you through a GitHub OAuth flow.
+   - Authorize access to your repositories.
 
-4. **Install Claude Code** (in Git Bash):
-   ```
-   npm install -g @anthropic-ai/claude-code
-   ```
+4. **Select the iankimbell.com repo** (`IJKMan/iankimbell.com`).
 
-5. **Configure git with your name and email** (once per machine):
-   ```
-   git config --global user.name "Ian Kimbell"
-   git config --global user.email "iankimbell@gmail.com"
-   ```
-
-6. **Clone the repo**:
-   ```
-   git clone https://github.com/IJKMan/iankimbell.com
-   cd iankimbell.com
-   ```
-
-7. **Start a session**:
-   ```
-   claude
-   ```
+5. **Start working**. Try a first prompt like:
+   - *"Read CLAUDE.md and tell me what's left to do."*
+   - *"Show me the current site."*
+   - *"Add Seoul to the world map."*
 
 That's it. You're in.
 
-> **Always run `claude` from Git Bash.** It will not work properly
-> from Command Prompt or PowerShell. If you accidentally open those,
-> close them and use Git Bash instead.
+### How the web Code section works
 
-> Optional: if you ever want a more "real Linux" environment on
-> Windows, look up **WSL2** (Windows Subsystem for Linux). It's
-> smoother for serious dev work, but Git Bash is plenty for editing
-> this site.
+- **Claude reads the whole repo**, including this CLAUDE.md, so it
+  knows the design rules and conventions from turn 0.
+- **Changes happen via pull requests.** When Claude makes edits, it
+  opens a PR for you to review and merge. Nothing goes live without
+  your approval.
+- **You can iterate in the same conversation**: *"That's close, but
+  change the headline back to..."* and Claude will update the PR.
+- **Merging a PR triggers a redeploy** (once Cloudflare Pages is
+  connected — see Hosting section). Until then it just updates the
+  repo.
 
-### First-time setup (Mac)
+### Alternative: Claude Code CLI on Windows
 
-If you're ever on a Mac instead: `git` is built in. Just install
-Node from https://nodejs.org, then `npm install -g @anthropic-ai/claude-code`,
-then clone and `cd` and `claude`. Skip the Git Bash step entirely.
+If you ever want to run Claude Code locally (faster iteration, no
+PR overhead, can preview the site in your local browser), the CLI
+route is:
+
+1. Install **Git for Windows**: https://git-scm.com/download/win
+   (gives you `git` plus Git Bash, a Unix-style terminal)
+2. Install **Node.js LTS**: https://nodejs.org/en/download
+3. Open **Git Bash** (not PowerShell, not cmd) and run:
+   ```
+   npm install -g @anthropic-ai/claude-code
+   ```
+4. Authenticate either with your Claude Pro/Max account
+   (`claude` then `/login`) OR with an API key from
+   console.anthropic.com (set as `ANTHROPIC_API_KEY` env var via
+   System Properties → Environment Variables).
+5. Configure git once: `git config --global user.name "Ian Kimbell"`
+   and `git config --global user.email "iankimbell@gmail.com"`.
+6. Clone and run:
+   ```
+   git clone https://github.com/IJKMan/iankimbell.com
+   cd iankimbell.com
+   claude
+   ```
+
+Web Code is friendlier for occasional edits; the CLI is faster for
+heavy iteration. Pick whichever fits the moment.
 
 ### Example first-session prompts
 
