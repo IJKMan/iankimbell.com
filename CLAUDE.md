@@ -282,19 +282,94 @@ decide:
 
 ---
 
-## Working with Claude on this site
+## Using Claude Code on this site
 
-If you're using Claude (Anthropic) or Claude Code to make changes:
+This file is set up so Claude Code reads it automatically every time
+you start a session in this directory. You don't have to ask. The
+first thing Claude does on launch is load CLAUDE.md, which means it
+already knows the site, the design rules, and the conventions.
 
-- **Mention this file.** "Read CLAUDE.md first, then..." gives Claude
-  the project context.
-- **Edits are usually targeted.** A single sentence change is a
-  one-Edit operation; restructuring a section is bigger.
-- **The site is one file.** No need to coordinate changes across
-  multiple components. Open `previews/v1.html`, find the section,
-  edit, save, refresh browser.
-- **Test locally before pushing.** Open the file in a browser after
-  any change. If it looks right, push.
+### First-time setup
+
+1. Install Claude Code (one-time): https://docs.claude.com/en/docs/claude-code
+2. Clone the repo:
+   ```
+   git clone https://github.com/IJKMan/iankimbell.com
+   cd iankimbell.com
+   ```
+3. Configure git with your name and email (once per machine):
+   ```
+   git config --global user.name "Ian Kimbell"
+   git config --global user.email "iankimbell@gmail.com"
+   ```
+4. Start a session:
+   ```
+   claude
+   ```
+
+That's it. You're in.
+
+### Example first-session prompts
+
+These are good starting points. You don't have to use these wordings,
+they're just to show the kind of thing Claude can do:
+
+- *"Show me the current site in my browser."* (Claude will open
+  previews/v1.html for you.)
+- *"Add Seoul to the world map."* (Claude will find the coordinates,
+  insert the SVG dot, and commit.)
+- *"Change the headline to say X."* (Targeted copy edit.)
+- *"Replace the second testimonial with this one:"* (Paste new text.)
+- *"I want to add a new section between Why-me and Press called
+  'Recent talks'. Plan it first, then ask before changing anything."*
+- *"Commit and push my changes."* (Claude handles the git side.)
+- *"Read the CLAUDE.md and tell me what's left to do."* (Surfaces
+  the open-questions list.)
+
+### Permissions
+
+Claude Code will ask you before:
+
+- Editing files (the first time per session, then it remembers)
+- Running git commands
+- Pushing to GitHub
+
+You can approve each prompt individually. If you want Claude to work
+without stopping to ask, you can run `claude --permission-mode
+acceptEdits` (but read the prompts at least a few times first so you
+trust what's being done).
+
+### Things to know
+
+- **The site is one file.** Everything is in `previews/v1.html`. No
+  coordination across components, no build step.
+- **Test in the browser after every change.** Refresh
+  `file:///path/to/iankimbell.com/previews/v1.html` (or just ask
+  Claude to open it for you).
+- **Push to GitHub when you're happy.** Once Cloudflare Pages is
+  wired up, pushing to `main` deploys to iankimbell.com automatically.
+- **Don't force-push to main.** If you ever get stuck, ask Claude for
+  help rather than running destructive git commands.
+- **For big design changes, brainstorm first.** Tell Claude what
+  you're trying to accomplish, not the exact code change. It'll
+  propose options, you pick, then it executes.
+
+### When Claude gets it wrong
+
+It will sometimes. Two helpful patterns:
+
+- *"That's not what I meant. I wanted X, not Y."* Claude will
+  correct course.
+- *"Undo the last change."* Claude can revert via git.
+
+### Quick reference for "what file"
+
+99% of the time the answer is `previews/v1.html`. The other 1%:
+
+- Photo issues → `assets/ian.jpg`
+- Logo issues → `assets/press/`
+- Repo intro → `README.md`
+- This file → `CLAUDE.md`
 
 ---
 
