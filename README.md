@@ -19,7 +19,18 @@ long-scroll consulting-funnel page. Copy is placeholder pending Ian's input.
 
 Plain HTML and CSS in one file. No build step, no framework.
 Fonts loaded from Google Fonts (Fraunces + Inter Tight).
-Hosted via GitHub Pages once `index.html` is finalized.
+
+## Hosting
+
+Cloudflare Pages, auto-deploying from this repo's `main` branch.
+Every push to `main` triggers a redeploy.
+
+Cloudflare project settings:
+
+- Framework preset: **None**
+- Build command: *(empty)*
+- Build output directory: `/`
+- Production branch: `main`
 
 ## Local preview
 
@@ -35,5 +46,5 @@ open previews/v1.html
    (visually marked with a teal left bar in the draft)
 2. Headshot lands in `assets/ian.jpg`
 3. Promote `previews/v1.html` to `index.html` at repo root
-4. Enable GitHub Pages: Settings → Pages → main branch / root
-5. Point `iankimbell.com` DNS at GitHub Pages
+4. Connect this repo in Cloudflare Pages (one-time setup)
+5. Point `iankimbell.com` DNS at the Pages project
