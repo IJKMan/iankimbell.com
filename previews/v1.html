@@ -335,6 +335,81 @@
   }
   .why .lede cite span { color: var(--accent); }
 
+  /* ─── practice (single-block services) ─── */
+  .practice .practice-body {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .practice .section-head { margin-bottom: 48px; }
+  .practice .lede {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+    font-weight: 360;
+  }
+  .practice .activities {
+    list-style: none;
+    margin: 0 0 48px;
+    padding: 0;
+    counter-reset: act;
+    border-top: 1px solid var(--ink);
+  }
+  .practice .activities li {
+    counter-increment: act;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Fraunces', serif;
+    font-size: clamp(22px, 2.6vw, 30px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--ink);
+    display: flex;
+    align-items: baseline;
+    gap: 22px;
+    letter-spacing: -0.005em;
+  }
+  .practice .activities li::before {
+    content: "0" counter(act);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    flex-shrink: 0;
+    width: 26px;
+  }
+  .practice .closing {
+    padding: 28px 32px;
+    background: var(--bg-soft);
+    border-left: 3px solid var(--accent);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .practice .closing strong {
+    font-style: normal;
+    display: block;
+    margin-top: 10px;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-family: 'Inter Tight', sans-serif;
+  }
+
+  /* two-part testimonial body */
+  .quote .q-body {
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin: 14px 0 0;
+    line-height: 1.55;
+  }
+
   /* ─── pull-quote section ─── */
   .pullquote {
     background: var(--bg-soft);
@@ -640,16 +715,15 @@
 <section class="hero" id="top">
   <div class="panel">
     <div class="inner">
-      <div class="eyebrow">Storytelling &middot; Presentation coaching &middot; AI &middot; Executive messaging</div>
-      <h1 class="placeholder">Complex ideas, told as stories that win <em>attention, trust, and action</em>.</h1>
+      <div class="eyebrow">Strategic communication coaching</div>
+      <h1 class="placeholder">Executive Communication. <em>Sharpened.</em></h1>
       <p class="sub placeholder">
-        I help technology leaders, sales teams, and experts communicate with clarity and confidence &mdash;
-        through storytelling, AI, presentation coaching, and executive-ready messaging. Thirty-five years
-        creating stories for the world's technology companies, on stages from Sapphire to TechEd.
+        I help leaders, technical professionals, and teams communicate complex ideas
+        with clarity, confidence, and influence &mdash; especially when the stakes are high.
       </p>
       <div class="ctas">
-        <a href="#contact" class="btn">Get in touch</a>
-        <a href="#services" class="btn ghost">See how I work →</a>
+        <a href="#contact" class="btn">Contact Me</a>
+        <a href="#services" class="btn ghost">How I work →</a>
       </div>
     </div>
   </div>
@@ -681,45 +755,24 @@
 </section>
 
 <!-- ─────────────────────── SERVICES ─────────────────────── -->
-<section class="section" id="services">
+<section class="section practice" id="services">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-tag">Services</div>
-      <h2>Three ways to work together &mdash; <em>storytelling, coaching, and AI-augmented practice</em> &mdash; built on the same belief: the right story, told well, moves rooms.</h2>
+      <div class="section-tag">What I do</div>
+      <h2>I work with professionals who need to deliver <em>high-stakes presentations</em> with clarity and authority.</h2>
     </div>
-    <div class="services">
-      <div class="service">
-        <div class="num">01</div>
-        <h3 class="placeholder">Story &amp; executive messaging</h3>
-        <p class="placeholder">Turn what you actually know into a story your audience can hear. Decks, talk-tracks, board updates, sales narratives, keynote arcs &mdash; built so the idea lands the first time, not the third.</p>
-        <ul class="placeholder">
-          <li>Narrative architecture &amp; through-line</li>
-          <li>Executive-ready messaging &amp; talk-tracks</li>
-          <li>Deck design &amp; slide craft</li>
-        </ul>
-        <div class="for"><strong>For:</strong> Technology leaders, sales teams, and experts with something hard to explain</div>
-      </div>
-      <div class="service">
-        <div class="num">02</div>
-        <h3 class="placeholder">Presentation coaching</h3>
-        <p class="placeholder">A focused 1:1 or small-team engagement on how you actually land in front of an audience &mdash; voice, pacing, the bits that show up on camera, and the parts of a talk most people overlook until it's too late.</p>
-        <ul class="placeholder">
-          <li>Recorded review &amp; structured feedback</li>
-          <li>Q&amp;A and "thinking on your feet" drills</li>
-          <li>Talk-to-talk progression over a quarter</li>
-        </ul>
-        <div class="for"><strong>For:</strong> Executives, sales leaders, and expert-presenters who'll be in front of audiences repeatedly</div>
-      </div>
-      <div class="service">
-        <div class="num">03</div>
-        <h3 class="placeholder">AI-augmented storytelling</h3>
-        <p class="placeholder">A modern coaching loop that uses AI to extend the work between sessions. We set up the tools, the prompts, and the workflows so you keep getting sharper on your own &mdash; without losing the voice that makes it yours.</p>
-        <ul class="placeholder">
-          <li>Tooling &amp; workflow setup</li>
-          <li>Prompt &amp; feedback library tuned to your voice</li>
-          <li>Ongoing tune-ups as the tools evolve</li>
-        </ul>
-        <div class="for"><strong>For:</strong> Leaders &amp; teams who want compounding improvement, not one-off help</div>
+    <div class="practice-body">
+      <p class="lede">Together we:</p>
+      <ol class="activities">
+        <li>Simplify complex ideas</li>
+        <li>Build persuasive narrative structure</li>
+        <li>Strengthen executive presence</li>
+        <li>Refine delivery and language</li>
+        <li>Prepare for critical meetings</li>
+      </ol>
+      <div class="closing">
+        This is not presentation &ldquo;tips.&rdquo;
+        <strong>It&rsquo;s strategic communication coaching.</strong>
       </div>
     </div>
   </div>
@@ -758,25 +811,29 @@
 <section class="section" id="kind-words">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-tag">Kind words</div>
-      <h2>What former colleagues and audiences have said.</h2>
+      <div class="section-tag">What clients say</div>
+      <h2>From the people Ian has worked with.</h2>
     </div>
     <div class="quotes">
       <div class="quote">
-        <p class="q placeholder">Placeholder testimonial — Ian to provide. Aim for two-to-three sentences, a specific outcome, a name and a title from his SAP-era network.</p>
-        <div class="by placeholder"><strong>[Name]</strong>[Title], [Company]</div>
+        <p class="q">Ian transformed how I structure executive presentations.</p>
+        <p class="q-body">His ability to simplify complex thinking and build clear narrative flow completely changed how I communicate at board level.</p>
+        <div class="by"><strong>Senior Leader</strong>Global Technology Company</div>
       </div>
       <div class="quote">
-        <p class="q placeholder">Placeholder testimonial — a second voice, ideally from a different kind of engagement (deck build vs. coaching vs. team workshop) so the three services each get implicit proof.</p>
-        <div class="by placeholder"><strong>[Name]</strong>[Title], [Company]</div>
+        <p class="q">Game-changing for our presales team.</p>
+        <p class="q-body">The frameworks Ian introduced elevated the clarity and impact of our demos. We now present with far more confidence and authority.</p>
+        <div class="by"><strong>Head of Sales Engineering</strong></div>
       </div>
       <div class="quote">
-        <p class="q placeholder">Optional third &mdash; can be cut for v1 if Ian has only two ready. Two strong named quotes beat three weak ones.</p>
-        <div class="by placeholder"><strong>[Name]</strong>[Title], [Company]</div>
+        <p class="q">Direct, structured, and highly effective.</p>
+        <p class="q-body">Ian doesn&rsquo;t just polish slides &mdash; he reshapes how you think about communication. The difference in outcome was measurable.</p>
+        <div class="by"><strong>Founder &amp; CEO</strong></div>
       </div>
       <div class="quote">
-        <p class="q placeholder">Optional fourth &mdash; same rule. Better empty than padded.</p>
-        <div class="by placeholder"><strong>[Name]</strong>[Title], [Company]</div>
+        <p class="q">You have a talent.</p>
+        <p class="q-body">Ian has a rare ability to sharpen complex ideas and elevate delivery under pressure. Working with him noticeably improved the clarity and impact of our high-profile presentations.</p>
+        <div class="by"><strong>Senior Producer</strong>International Live Events</div>
       </div>
     </div>
   </div>
@@ -849,11 +906,12 @@
         <p>Helping technology leaders, sales teams, and experts turn complex ideas into stories that win attention, trust, and action.</p>
       </div>
       <div class="col">
-        <h4>Services</h4>
+        <h4>What I do</h4>
         <ul>
-          <li><a href="#services">Story &amp; executive messaging</a></li>
-          <li><a href="#services">Presentation coaching</a></li>
-          <li><a href="#services">AI-augmented storytelling</a></li>
+          <li><a href="#services">Narrative structure</a></li>
+          <li><a href="#services">Executive presence</a></li>
+          <li><a href="#services">Delivery &amp; language</a></li>
+          <li><a href="#services">High-stakes meetings</a></li>
         </ul>
       </div>
       <div class="col">
