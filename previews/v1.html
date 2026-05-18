@@ -318,6 +318,57 @@
     line-height: 1.25;
     font-weight: 360;
     color: var(--ink);
+    margin: 0;
+    padding: 0 0 0 24px;
+    border-left: 2px solid var(--accent);
+  }
+  .why .lede p { margin: 0 0 18px; }
+  .why .lede cite {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-style: normal;
+    font-size: 11.5px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-weight: 500;
+  }
+  .why .lede cite span { color: var(--accent); }
+
+  /* ─── pull-quote section ─── */
+  .pullquote {
+    background: var(--bg-soft);
+    padding: 96px 0;
+    border-bottom: 1px solid var(--rule);
+    text-align: center;
+  }
+  .pullquote .quote-body {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 360;
+    font-size: clamp(30px, 4.6vw, 52px);
+    line-height: 1.18;
+    color: var(--ink);
+    max-width: 22ch;
+    margin: 0 auto;
+    letter-spacing: -0.01em;
+  }
+  .pullquote .quote-body::before { content: "\201C"; color: var(--accent); margin-right: 2px; }
+  .pullquote .quote-body::after  { content: "\201D"; color: var(--accent); margin-left: 2px; }
+  .pullquote cite {
+    display: block;
+    margin-top: 32px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11.5px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--mute);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .pullquote cite span { color: var(--accent); }
+  @media (max-width: 880px) {
+    .pullquote { padding: 56px 0; }
   }
   .why .body p {
     margin: 0 0 1em;
@@ -682,15 +733,24 @@
       <h2>Complex ideas don't sell themselves. <em>They need a translator</em> &mdash; and someone to coach the human who's about to deliver them.</h2>
     </div>
     <div class="grid">
-      <p class="lede placeholder">
-        I've spent more time at the back of the room and the front of the room than almost anyone I know. The trick was never the slides. It was the work before the slides.
-      </p>
+      <blockquote class="lede">
+        <p>&ldquo;I have a rule that I will only rehearse once on the day before the demo &mdash; to make sure the spontaneity is there.&rdquo;</p>
+        <cite>Ian Kimbell, in <span>CIO Magazine</span>, 2009</cite>
+      </blockquote>
       <div class="body placeholder">
         <p>For more than thirty-five years I've worked inside the world's technology companies, helping them turn what they know into what their audiences hear. Most recently at SAP, where I became one of the people the company put on its biggest stages &mdash; Sapphire, TechEd, regional kick-offs, customer summits. Audiences of ten thousand were a regular part of the calendar.</p>
         <p>What I learned in those rooms is that <strong>the talk people remember is almost never the most polished one</strong>. It's the one whose author had a complex idea and knew how to translate it into something the room could hear, trust, and act on. The craft, the slides, the rehearsal &mdash; those are in service of that.</p>
         <p>Now I work with a small number of <strong>technology leaders, sales teams, and experts</strong> at a time &mdash; the people whose ideas are most worth landing and most often lost in translation. I take engagements worldwide. If you're one of them, get in touch.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── PULL QUOTE (Ian, CIO 2009) ─────────────────────── -->
+<section class="pullquote">
+  <div class="wrap">
+    <p class="quote-body">I tell them I&rsquo;m the demo boy at SAP.</p>
+    <cite>Ian Kimbell, in <span>CIO Magazine</span>, 2009</cite>
   </div>
 </section>
 
@@ -749,8 +809,8 @@
         </div>
       </div>
       <div class="body placeholder">
-        <p>[Ian's own short bio goes here. Aim for three or four sentences in his voice. The arc to suggest: <em>thirty-five years inside the world's technology companies, most recently at SAP where I became one of its most-requested speakers. Now in an independent practice, working with a small number of clients worldwide.</em> The voice can be warm and confident &mdash; he is, after all, the product.]</p>
-        <p>[If there's a defining moment or a particular keynote he's known for, this is the place to mention it &mdash; a single concrete detail beats a paragraph of generality.]</p>
+        <p>I joined SAP in 1998 after eleven years at DuPont, and spent the next twenty-eight years there &mdash; in marketing, in the Chairman's office, and on the stages SAP put me on at Sapphire keynotes from Berlin 2000 onward. Along the way I co-authored two books on SAP (<em>Discover SAP</em>, with Nancy Muir, and <em>mySAP ERP For Dummies</em>) and quietly built a reputation for landing complex ideas at the speed of a live audience.</p>
+        <p>I'm British, German-trained &mdash; a BA (Hons) in European Business plus a <em>Diplom Betriebswirt</em> &mdash; and have lived and worked between the two countries since 1987. Now I take engagements independently and worldwide.</p>
       </div>
     </div>
   </div>
