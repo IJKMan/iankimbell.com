@@ -289,25 +289,60 @@ you start a session in this directory. You don't have to ask. The
 first thing Claude does on launch is load CLAUDE.md, which means it
 already knows the site, the design rules, and the conventions.
 
-### First-time setup
+### First-time setup (Windows)
 
-1. Install Claude Code (one-time): https://docs.claude.com/en/docs/claude-code
-2. Clone the repo:
+Claude Code expects a Unix-style shell to run from. Windows doesn't
+ship with one, so we install **Git for Windows**, which bundles
+`git` plus a bash terminal called **Git Bash**. Everything below
+runs in Git Bash (not Command Prompt, not PowerShell).
+
+1. **Install Git for Windows**: https://git-scm.com/download/win
+   Take the defaults during the installer. This gives you `git`
+   plus the **Git Bash** terminal you'll use from here on.
+
+2. **Install Node.js (LTS version)**: https://nodejs.org/en/download
+   Claude Code is distributed through npm, which comes with Node.
+
+3. **Open Git Bash** (Start menu → Git Bash).
+
+4. **Install Claude Code** (in Git Bash):
    ```
-   git clone https://github.com/IJKMan/iankimbell.com
-   cd iankimbell.com
+   npm install -g @anthropic-ai/claude-code
    ```
-3. Configure git with your name and email (once per machine):
+
+5. **Configure git with your name and email** (once per machine):
    ```
    git config --global user.name "Ian Kimbell"
    git config --global user.email "iankimbell@gmail.com"
    ```
-4. Start a session:
+
+6. **Clone the repo**:
+   ```
+   git clone https://github.com/IJKMan/iankimbell.com
+   cd iankimbell.com
+   ```
+
+7. **Start a session**:
    ```
    claude
    ```
 
 That's it. You're in.
+
+> **Always run `claude` from Git Bash.** It will not work properly
+> from Command Prompt or PowerShell. If you accidentally open those,
+> close them and use Git Bash instead.
+
+> Optional: if you ever want a more "real Linux" environment on
+> Windows, look up **WSL2** (Windows Subsystem for Linux). It's
+> smoother for serious dev work, but Git Bash is plenty for editing
+> this site.
+
+### First-time setup (Mac)
+
+If you're ever on a Mac instead: `git` is built in. Just install
+Node from https://nodejs.org, then `npm install -g @anthropic-ai/claude-code`,
+then clone and `cd` and `claude`. Skip the Git Bash step entirely.
 
 ### Example first-session prompts
 
