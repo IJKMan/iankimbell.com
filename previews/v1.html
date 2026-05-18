@@ -486,17 +486,10 @@
     flex-wrap: wrap; gap: 12px;
   }
 
-  /* ─── placeholder marker (for swap-clarity) ─── */
-  .placeholder {
-    background: var(--accent-soft);
-    border-left: 2px solid var(--accent);
-    padding-left: 8px;
-  }
-  /* placeholder inside the teal hero panel needs different treatment */
-  .hero .panel .placeholder {
-    background: rgba(251,250,247,0.05);
-    border-left: 2px solid rgba(251,250,247,0.4);
-  }
+  /* ─── placeholder marker — disabled now that hero copy is final ─── */
+  /* the .placeholder class stays in the markup as a future on/off toggle;
+     re-enable by uncommenting if scaffolding mode is ever needed again */
+  .placeholder { }
 
   /* ─── motion ─── */
   @keyframes rise {
