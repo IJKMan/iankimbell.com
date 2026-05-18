@@ -7,3 +7,11 @@ node_modules/
 
 # local exploration kept on disk for reference only
 /_archive-personal-site-previews/
+
+# raw camera files — convert to JPG/WebP before commit
+*.CR2
+*.CR3
+*.NEF
+*.ARW
+*.RW2
+*.DNG
