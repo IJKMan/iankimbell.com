@@ -339,7 +339,7 @@
   .world {
     background: var(--accent-deep);
     color: var(--bg);
-    padding: 96px 0 88px;
+    padding: 64px 0 56px;
     position: relative;
     overflow: hidden;
     border-bottom: none;
@@ -347,7 +347,7 @@
   .world::before {
     content: "";
     position: absolute; inset: 0;
-    background-image: radial-gradient(circle, rgba(251,250,247,0.07) 0.7px, transparent 1.4px);
+    background-image: radial-gradient(circle, rgba(251,250,247,0.05) 0.7px, transparent 1.4px);
     background-size: 16px 16px;
     pointer-events: none;
   }
@@ -355,18 +355,18 @@
   .world .world-head {
     text-align: center;
     max-width: 720px;
-    margin: 0 auto 48px;
+    margin: 0 auto 32px;
   }
   .world .world-head .section-tag {
     color: rgba(251,250,247,0.58);
-    margin-bottom: 18px;
+    margin-bottom: 14px;
   }
   .world .world-head .section-tag::before { color: rgba(251,250,247,0.42); }
   .world .world-head h2 {
     color: var(--bg);
-    font-size: clamp(32px, 4vw, 48px);
-    line-height: 1.05;
-    margin: 0 0 18px;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.08;
+    margin: 0 0 14px;
   }
   .world .world-head h2 em {
     font-style: italic;
@@ -374,20 +374,38 @@
     opacity: 0.7;
   }
   .world .world-intro {
-    color: rgba(251,250,247,0.74);
-    font-size: 17px;
-    line-height: 1.55;
+    color: rgba(251,250,247,0.72);
+    font-size: 15.5px;
+    line-height: 1.5;
     margin: 0 auto;
-    max-width: 56ch;
+    max-width: 52ch;
   }
   .world .map-wrap {
-    margin: 0 auto 40px;
-    max-width: 1000px;
+    margin: 0 auto 28px;
+    max-width: 920px;
+    aspect-ratio: 360 / 130;
+    position: relative;
+    overflow: hidden;
+  }
+  /* world map background — equirectangular satellite, stylized */
+  .world .map-wrap::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: url("../assets/world-map.jpg");
+    background-size: 100% 138.5%;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%) brightness(0.45) contrast(1.7);
+    opacity: 0.55;
+    mix-blend-mode: screen;
+    pointer-events: none;
   }
   .world svg.map {
+    position: absolute; inset: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    z-index: 2;
   }
   .world svg.map circle {
     fill: #7fdfd9;
@@ -876,7 +894,7 @@
       <p class="world-intro">Sapphire, TechEd, and customer keynotes. A partial map of the cities where the work has happened.</p>
     </div>
     <div class="map-wrap">
-      <svg class="map" viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" aria-label="World map showing speaking engagement cities">
+      <svg class="map" viewBox="0 25 360 130" preserveAspectRatio="xMidYMid meet" aria-label="World map showing speaking engagement cities">
         <circle cx="179.9" cy="38.5" r="1.8"><title>London</title></circle>
         <circle cx="182.4" cy="41.1" r="1.8"><title>Paris</title></circle>
         <circle cx="188.7" cy="39.9" r="1.8"><title>Frankfurt</title></circle>
