@@ -114,26 +114,7 @@
     position: relative;
     z-index: 2;
   }
-  /* subtle decorative outlined rectangle — Orator-inspired touch */
-  .hero .panel::before {
-    content: "";
-    position: absolute;
-    right: 6%; top: 20%;
-    width: 32%; height: 56%;
-    border: 1px solid rgba(251,250,247,0.22);
-    z-index: 1;
-    pointer-events: none;
-  }
-  .hero .panel::after {
-    content: "";
-    position: absolute;
-    right: calc(6% + 32% - 7px); top: calc(20% + 56% - 7px);
-    width: 14px; height: 14px;
-    border: 1px solid rgba(251,250,247,0.4);
-    border-radius: 50%;
-    background: var(--accent);
-    z-index: 1;
-  }
+  /* decorative outlined rectangle removed — read as visual noise, not design */
   .eyebrow {
     font-size: 12px;
     letter-spacing: 0.22em;
