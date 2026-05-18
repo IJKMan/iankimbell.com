@@ -335,6 +335,107 @@
   }
   .why .lede cite span { color: var(--accent); }
 
+  /* ─── world map ─── */
+  .world {
+    background: var(--accent-deep);
+    color: var(--bg);
+    padding: 96px 0 88px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: none;
+  }
+  .world::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle, rgba(251,250,247,0.07) 0.7px, transparent 1.4px);
+    background-size: 16px 16px;
+    pointer-events: none;
+  }
+  .world .wrap { position: relative; z-index: 1; }
+  .world .world-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 48px;
+  }
+  .world .world-head .section-tag {
+    color: rgba(251,250,247,0.58);
+    margin-bottom: 18px;
+  }
+  .world .world-head .section-tag::before { color: rgba(251,250,247,0.42); }
+  .world .world-head h2 {
+    color: var(--bg);
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.05;
+    margin: 0 0 18px;
+  }
+  .world .world-head h2 em {
+    font-style: italic;
+    color: var(--bg);
+    opacity: 0.7;
+  }
+  .world .world-intro {
+    color: rgba(251,250,247,0.74);
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0 auto;
+    max-width: 56ch;
+  }
+  .world .map-wrap {
+    margin: 0 auto 40px;
+    max-width: 1000px;
+  }
+  .world svg.map {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .world svg.map circle {
+    fill: #7fdfd9;
+    filter: drop-shadow(0 0 3px rgba(127,223,217,0.85));
+    animation: city-pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes city-pulse {
+    0%, 100% { opacity: 0.55; }
+    50%      { opacity: 1; }
+  }
+  .world svg.map circle:nth-of-type(1) { animation-delay: 0s; }
+  .world svg.map circle:nth-of-type(2) { animation-delay: 0.2s; }
+  .world svg.map circle:nth-of-type(3) { animation-delay: 0.4s; }
+  .world svg.map circle:nth-of-type(4) { animation-delay: 0.6s; }
+  .world svg.map circle:nth-of-type(5) { animation-delay: 0.8s; }
+  .world svg.map circle:nth-of-type(6) { animation-delay: 1.0s; }
+  .world svg.map circle:nth-of-type(7) { animation-delay: 1.2s; }
+  .world svg.map circle:nth-of-type(8) { animation-delay: 1.4s; }
+  .world svg.map circle:nth-of-type(9) { animation-delay: 1.6s; }
+  .world svg.map circle:nth-of-type(10) { animation-delay: 1.8s; }
+  .world svg.map circle:nth-of-type(11) { animation-delay: 2.0s; }
+  .world svg.map circle:nth-of-type(12) { animation-delay: 2.2s; }
+  .world .cities {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 760px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 0;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    color: rgba(251,250,247,0.82);
+  }
+  .world .cities li {
+    padding: 0 14px;
+    border-right: 1px solid rgba(251,250,247,0.18);
+    line-height: 1.2;
+  }
+  .world .cities li:last-child { border-right: none; }
+  @media (max-width: 880px) {
+    .world { padding: 56px 0; }
+    .world .cities { font-size: 13px; }
+    .world .cities li { padding: 0 8px; }
+  }
+
   /* ─── practice (single-block services) ─── */
   .practice .practice-body {
     max-width: 760px;
@@ -751,6 +852,47 @@
         <div class="label placeholder">selective independent practice &mdash; working worldwide</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ─────────────────────── WORLD MAP ─────────────────────── -->
+<section class="section world" id="stages">
+  <div class="wrap">
+    <div class="world-head">
+      <div class="section-tag">Stages</div>
+      <h2>From the stage &mdash; <em>worldwide</em>.</h2>
+      <p class="world-intro">Sapphire, TechEd, and customer keynotes. A partial map of the cities where the work has happened.</p>
+    </div>
+    <div class="map-wrap">
+      <svg class="map" viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" aria-label="World map showing speaking engagement cities">
+        <circle cx="179.9" cy="38.5" r="1.8"><title>London</title></circle>
+        <circle cx="182.4" cy="41.1" r="1.8"><title>Paris</title></circle>
+        <circle cx="188.7" cy="39.9" r="1.8"><title>Frankfurt</title></circle>
+        <circle cx="193.4" cy="37.5" r="1.8"><title>Berlin</title></circle>
+        <circle cx="191.6" cy="41.9" r="1.8"><title>Munich</title></circle>
+        <circle cx="128.8" cy="120" r="1.8"><title>Porto Alegre</title></circle>
+        <circle cx="294.2" cy="67.7" r="1.8"><title>Hong Kong</title></circle>
+        <circle cx="301" cy="75.4" r="1.8"><title>Manila</title></circle>
+        <circle cx="283.8" cy="88.6" r="1.8"><title>Singapore</title></circle>
+        <circle cx="319.7" cy="54.3" r="1.8"><title>Tokyo</title></circle>
+        <circle cx="315.5" cy="55.3" r="1.8"><title>Osaka</title></circle>
+        <circle cx="301.5" cy="65" r="1.8"><title>Taipei</title></circle>
+      </svg>
+    </div>
+    <ul class="cities" aria-label="Cities where Ian has spoken">
+      <li>London</li>
+      <li>Paris</li>
+      <li>Frankfurt</li>
+      <li>Berlin</li>
+      <li>Munich</li>
+      <li>Porto Alegre</li>
+      <li>Hong Kong</li>
+      <li>Manila</li>
+      <li>Singapore</li>
+      <li>Tokyo</li>
+      <li>Osaka</li>
+      <li>Taipei</li>
+    </ul>
   </div>
 </section>
 
