@@ -759,6 +759,65 @@
     background: var(--bg); border-color: var(--bg); color: var(--accent-deep);
   }
   .contact .btn:hover { background: transparent; color: var(--bg); border-color: var(--bg); }
+  /* ─── contact form ─── */
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .contact-form label {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(251,250,247,0.6);
+    margin-bottom: 6px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    background: rgba(251,250,247,0.07);
+    border: 1px solid rgba(251,250,247,0.22);
+    border-radius: 4px;
+    color: var(--bg);
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 16px;
+    padding: 12px 14px;
+    transition: border-color 0.2s, background 0.2s;
+    box-sizing: border-box;
+  }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: rgba(251,250,247,0.3); }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: rgba(251,250,247,0.6);
+    background: rgba(251,250,247,0.11);
+  }
+  .contact-form textarea { resize: vertical; min-height: 120px; }
+  .contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .contact-form .submit-row { margin-top: 4px; }
+  .contact-form .form-success {
+    display: none;
+    padding: 16px;
+    background: rgba(251,250,247,0.1);
+    border: 1px solid rgba(251,250,247,0.3);
+    border-radius: 4px;
+    color: var(--bg);
+    font-size: 15px;
+    text-align: center;
+  }
+  .contact .direct-links {
+    display: flex; gap: 24px; margin-top: 24px;
+    border-top: 1px solid rgba(251,250,247,0.15);
+    padding-top: 20px;
+  }
+  .contact .direct-links a {
+    color: rgba(251,250,247,0.6);
+    text-decoration: none;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 13px;
+    transition: color 0.2s;
+  }
+  .contact .direct-links a:hover { color: var(--bg); }
 
   /* ─── footer ─── */
   footer {
@@ -1102,10 +1161,30 @@
         </p>
         <a href="mailto:info@iankimbell.com" class="btn">Email Ian</a>
       </div>
-      <div class="channels">
-        <a href="mailto:info@iankimbell.com" class="placeholder">info@iankimbell.com <span>Email</span></a>
-        <a href="https://www.linkedin.com/in/iankimbell/" target="_blank" rel="noopener" class="placeholder">LinkedIn <span>Professional</span></a>
-        <a href="https://github.com/IJKMan" class="placeholder">github.com/IJKMan <span>Code</span></a>
+      <div>
+        <form class="contact-form" action="https://formspree.io/f/mnjrjrgl" method="POST">
+          <div class="form-row">
+            <div>
+              <label for="cf-name">Name</label>
+              <input id="cf-name" type="text" name="name" placeholder="Your name" required>
+            </div>
+            <div>
+              <label for="cf-email">Email</label>
+              <input id="cf-email" type="email" name="email" placeholder="your@email.com" required>
+            </div>
+          </div>
+          <div>
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="Tell me what you're working on..." required></textarea>
+          </div>
+          <div class="submit-row">
+            <button type="submit" class="btn">Send message</button>
+          </div>
+        </form>
+        <div class="direct-links">
+          <a href="mailto:info@iankimbell.com">info@iankimbell.com</a>
+          <a href="https://www.linkedin.com/in/iankimbell/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
       </div>
     </div>
   </div>
